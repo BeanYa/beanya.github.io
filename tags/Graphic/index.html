@@ -78,6 +78,8 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random/2560x863)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Bean's Studio
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                The world is not black or white, but a delicious shade of grey.
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -391,352 +378,10 @@ DX10为了提高渲染速度，改良渲染架构，不再使用渲染管线的�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/Quaternion四元数/">
-            
-                <span>Quaternion四元数</span>
-        </a>
-        <div class="abstract-content">
-            旋转操作 在unity3d中, quaternion 的乘法操作 (operator  * ) 有两种操作:
-
-quaternion  quaternion , 例如 q = t  p; 这是将一个点先进行t 操作旋转,然后进行p操作旋转.
-Quaternion  Vector3, 例如 p : Vector3, t : Quaternion , q : Quaternion;    q = t  p; 这是将点p 进性t 操作旋转，即对一个向量进行旋转;
-
-Quaternion 的基本数学方程为 : Q = cos (a/2) + i (x  sin(a/2)) + j (y  sin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Math">Math</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Unity">Unity</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="GameLogic">GameLogic</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/贝叶斯公式/">
-            
-                <span>贝叶斯公式</span>
-        </a>
-        <div class="abstract-content">
-            来源贝叶斯定理（英语：Bayes’ theorem）是概率论中的一个定理，它跟随机变量的条件概率以及边缘概率分布有关。在有些关于概率的解释中，贝叶斯定理（贝叶斯公式）能够告知我们如何利用新证据修改已有的看法。这个名称来自于托马斯·贝叶斯。
-通常，事件A在事件B（发生）的条件下的概率，与事件B在事件A（发生）的条件下的概率是不一样的。然而，这两者是有确定的关系的，贝叶斯定理就是这种关系的陈述。贝叶斯公式的一个用途在于通过已知的三个概率函数推出第四个。
-定义贝叶斯定理是关于随机事件A和B的条件概率的一则定理。其中P(A|B)是指在事件B发生的情况下事件A发生的概率。
-在贝叶斯定理中，每个名词...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Probability Theory">Probability Theory</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/关系运算/">
-            
-                <span>关系运算</span>
-        </a>
-        <div class="abstract-content">
-            包含关系运算包括选择、投影、连接以及除法。集合运算是二目运算，包括并、差、交、广义笛卡尔积四种运算。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Probability Theory">Probability Theory</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/数学期望/">
-            
-                <span>数学期望</span>
-        </a>
-        <div class="abstract-content">
-            公式
-个人理解数学上希望出现的均值
-例题某盒中有 5 件产品，其中 2 件次品。现随机地从中 2 件，则 2 件中次品数的均值是（）
-答案: 4/5
-解析次品出现次数：0 , 1 , 2
-P(i=0) = 3/10
-p(i=1) = 6/10
-p(i=2) = 1/10
-
-E = 0 * p(i=0) + 1 * p(i=1) + 2 * p(i=2)
-  = 4 / 5
-即题目在求次品出现的数学期望
-对于二项分布E = x1 * p1 + x2 * p2 ... + xn * pn
-其中 p1…pn在二项分布中均相等,x1..xn也相等（仅有两事件且不变）
-则E = np
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Probability Theory">Probability Theory</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/VPS安装宝塔面板/">
-            
-                <span>VPS安装宝塔面板</span>
-        </a>
-        <div class="abstract-content">
-            宝塔面板面板可以可视化的一件部署一些组件，如LAMP，LNMP架构等，还可以对服务器进行性能监视。宝塔面板免费且全中文，对用户友好。
-安装
-Centos 下yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
-Ubuntu/Deepin下wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="VPS">VPS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="宝塔面板">宝塔面板</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/Shadowsocks/">
-            
-                <span>Shadowsocks</span>
-        </a>
-        <div class="abstract-content">
-            Shadowsocks是什么Shadowsocks是GitHub上的一个开源项目（原作者Clowwindy因为某些原因移除了），提供双端Socks5代理服务。有人拷贝了一份Shadowsocks的源码，地址 
-Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
-内核升级并开启TcpBBR拥塞控制仅仅安装Shadowsocks是不够的，可以升级内核并开启TcpBBR拥塞控制，提升速度。
-内核的升级用一键脚本完成即可1wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="VPS">VPS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Shadowsocks">Shadowsocks</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Proxy">Proxy</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/26/泊松过程/">
-            
-                <span>泊松过程</span>
-        </a>
-        <div class="abstract-content">
-            Wiki的定义Poisson过程（Poisson process，大陆译泊松过程、普阿松过程等，台译卜瓦松過程、布瓦松過程、布阿松過程、波以松過程、卜氏過程等），是以法国数学家泊松（1781 - 1840）的名字命名的。泊松过程是随机过程的一种，是以事件的发生时间来定义的。我们说一个 随机过程 N(t) 是一个时间齐次的一维泊松过程，如果它满足以下条件：
-
-在两个互斥（不重叠）的区间内所发生的事件的数目是互相独立的随机变量。
-在区间内发生的事件的数目的概率分布为：
-
-
-其中λ是一个正数，是固定的参数，通常称为抵达率（arrival rate）或强度（intensity）。所以，如果给定在...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Math">Math</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Probability Theory">Probability Theory</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Poisson process">Poisson process</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/avatar.jpg">
-    <div class="profile-name">Bean</div>
-    
-    <div class="profile-signature">
-        A true master is an eternal student.
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="//github.com/beanya" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WCQR.jpg">
-                </span>
-            
-        
-    
-        
-            
-                <a href="mailto:534646574@qq.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer qq" title="qq">
-                  
-                  <img class="profile-qr" src="/assets/QQQR.jpg">
-                </span>
-            
-        
-    
-        
-            
-                <a href="//t.me/beanya" class="iconfont-archer telegram" target="_blank" title="telegram"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
