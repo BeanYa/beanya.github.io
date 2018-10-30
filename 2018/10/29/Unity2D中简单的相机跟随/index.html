@@ -404,12 +404,12 @@ height:50vh;
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
             <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>c#:<br><figure class="highlight plain"><figcaption><span>CamraFollow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class CameraFollow : MonoBehaviour &#123;</span><br><span class="line">    //跟随目标</span><br><span class="line">    public Transform _target;</span><br><span class="line"></span><br><span class="line">    //平滑系数</span><br><span class="line">    public float smoothing;</span><br><span class="line"></span><br><span class="line">    //跟随速度</span><br><span class="line">    private Vector3 velocity;</span><br><span class="line">    </span><br><span class="line">    //写在LateUpdate中</span><br><span class="line">    void LateUpdate () &#123;</span><br><span class="line">        if (_target != null)</span><br><span class="line">        &#123;     </span><br><span class="line">            this.transform.position = Vector3.SmoothDamp(this.transform.position, _target.transform.position, ref velocity, smoothing);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-    </article>
-    <!--  Author information  -->
     
+        <article class="article-entry">
+            <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>c#:<br><figure class="highlight plain"><figcaption><span>CamraFollow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class CameraFollow : MonoBehaviour &#123;</span><br><span class="line">    //跟随目标</span><br><span class="line">    public Transform _target;</span><br><span class="line"></span><br><span class="line">    //平滑系数</span><br><span class="line">    public float smoothing;</span><br><span class="line"></span><br><span class="line">    //跟随速度</span><br><span class="line">    private Vector3 velocity;</span><br><span class="line">    </span><br><span class="line">    //写在LateUpdate中</span><br><span class="line">    void LateUpdate () &#123;</span><br><span class="line">        if (_target != null)</span><br><span class="line">        &#123;     </span><br><span class="line">            this.transform.position = Vector3.SmoothDamp(this.transform.position, _target.transform.position, ref velocity, smoothing);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        </article>
+        <!--  Author information  -->
         <div class="license-wrapper" style="margin:10rem 0 0">
             <p>作者：<a href="http://bean.ink">Bean</a>
             </p><p>发表时间：<a href="">October 29th 2018, 2:34:48 am</a>
@@ -836,16 +836,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 20
@@ -889,12 +879,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS/">VPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/NextCloud个人网盘安装/">NextCloud个人网盘安装</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
         </li>
     
     
@@ -909,17 +894,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS/">VPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/获取随机图片的网站/">获取随机图片的网站</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/NextCloud个人网盘安装/">NextCloud个人网盘安装</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/获取随机图片的网站/">获取随机图片的网站</a>
         </li>
     
     
@@ -934,17 +924,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/贝叶斯公式/">贝叶斯公式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/关系运算/">关系运算</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/贝叶斯公式/">贝叶斯公式</a>
         </li>
     
     
@@ -1003,13 +993,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Nextcloud"><span class="iconfont-archer">&#xe606;</span>Nextcloud</span>
     
+        <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
+    
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="Code"><span class="iconfont-archer">&#xe606;</span>Code</span>
     
         <span class="sidebar-tag-name" data-tags="Sample"><span class="iconfont-archer">&#xe606;</span>Sample</span>
-    
-        <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
     
         <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
     
@@ -1034,6 +1024,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="TV"><span class="iconfont-archer">&#xe606;</span>TV</span>
+    
+        <span class="sidebar-tag-name" data-tags="Tree"><span class="iconfont-archer">&#xe606;</span>Tree</span>
+    
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
     
         <span class="sidebar-tag-name" data-tags="Poisson process"><span class="iconfont-archer">&#xe606;</span>Poisson process</span>
     
@@ -1085,6 +1079,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Website"><span class="iconfont-archer">&#xe60a;</span>Website</span>
     
         <span class="sidebar-category-name" data-categories="Markdown"><span class="iconfont-archer">&#xe60a;</span>Markdown</span>
+    
+        <span class="sidebar-category-name" data-categories="Datastruct"><span class="iconfont-archer">&#xe60a;</span>Datastruct</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
