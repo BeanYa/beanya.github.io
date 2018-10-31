@@ -420,7 +420,7 @@ height:50vh;
 <li>倒数第三也就是正好最后一只出线的队伍，大于倒数第二即可，即拿2分</li>
 </ul>
 <h3 id="子网掩码和子网划分"><a href="#子网掩码和子网划分" class="headerlink" title="子网掩码和子网划分"></a>子网掩码和子网划分</h3><p>例如:</p>
-<p>192.168.0.0/24 — 子网掩码前24位为1</p>
+<p>192.168.0.0/24 —- 子网掩码前24位为1</p>
 <p>问子网数量和主机数</p>
 <p>通过地址与子网掩码算出主机数，通过地址掩码算子网数量</p>
 <h2 id="问答题"><a href="#问答题" class="headerlink" title="问答题"></a>问答题</h2><h3 id="写函数判断素数"><a href="#写函数判断素数" class="headerlink" title="写函数判断素数"></a>写函数判断素数</h3><p>直接：从2-n</p>
@@ -875,6 +875,8 @@ top:50vh;
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 21
@@ -933,12 +935,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/WordPress安装/">WordPress安装</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/WordPress安装/">WordPress安装</a>
         </li>
     
     
@@ -1013,11 +1015,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Proxy"><span class="iconfont-archer">&#xe606;</span>Proxy</span>
     
-        <span class="sidebar-tag-name" data-tags="宝塔面板"><span class="iconfont-archer">&#xe606;</span>宝塔面板</span>
-    
         <span class="sidebar-tag-name" data-tags="Probability Theory"><span class="iconfont-archer">&#xe606;</span>Probability Theory</span>
     
         <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+    
+        <span class="sidebar-tag-name" data-tags="宝塔面板"><span class="iconfont-archer">&#xe606;</span>宝塔面板</span>
     
         <span class="sidebar-tag-name" data-tags="数学期望"><span class="iconfont-archer">&#xe606;</span>数学期望</span>
     
@@ -1045,9 +1047,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
     
-        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
-    
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
     
         <span class="sidebar-tag-name" data-tags="Interview"><span class="iconfont-archer">&#xe606;</span>Interview</span>
     
@@ -1067,11 +1069,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
-        <span class="sidebar-tag-name" data-tags="TV"><span class="iconfont-archer">&#xe606;</span>TV</span>
-    
         <span class="sidebar-tag-name" data-tags="Tree"><span class="iconfont-archer">&#xe606;</span>Tree</span>
     
         <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="TV"><span class="iconfont-archer">&#xe606;</span>TV</span>
     
         <span class="sidebar-tag-name" data-tags="Poisson process"><span class="iconfont-archer">&#xe606;</span>Poisson process</span>
     
@@ -1112,9 +1114,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Proxy"><span class="iconfont-archer">&#xe60a;</span>Proxy</span>
     
-        <span class="sidebar-category-name" data-categories="VPS"><span class="iconfont-archer">&#xe60a;</span>VPS</span>
-    
         <span class="sidebar-category-name" data-categories="Math"><span class="iconfont-archer">&#xe60a;</span>Math</span>
+    
+        <span class="sidebar-category-name" data-categories="VPS"><span class="iconfont-archer">&#xe60a;</span>VPS</span>
     
         <span class="sidebar-category-name" data-categories="Code"><span class="iconfont-archer">&#xe60a;</span>Code</span>
     
@@ -1161,7 +1163,23 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
