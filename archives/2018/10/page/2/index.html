@@ -346,6 +346,49 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/10/29/NextCloud个人网盘安装/">
+            
+                <span>NextCloud个人网盘安装</span>
+        </a>
+        <div class="abstract-content">
+            面板安装面板安装比较简单
+
+去Nextcloud官网下载服务器安装包
+面板安装完LAMP或LNMP之后，添加一个站点，并添加一个数据库，用户名密码自行设置。
+打开刚创建的站点的根目录下，删除所有文件。
+点开面板的文件模块（浏览文件），将下载的服务器安装包.tar.gz文件放置到某个目录下，并且tar -zxcf 文件名.tar.gz解压缩，得到一个nextcloud文件夹。（或者.zip 用unzip命令解压缩，道理同上）
+进入nextcloud文件夹，将所有文件复制到刚创建的站点根目录下。
+打开对应的域名，填写相应的数据即完成安装。
+如果需要打开多端同步，那么域名则需要能在公网解析到，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Software">Software</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Web">Web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blog">Blog</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Nextcloud">Nextcloud</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/10/29/WordPress安装/">
             
                 <span>WordPress安装</span>
@@ -389,20 +432,17 @@
         </a>
         <div class="abstract-content">
             龙图笔试选择填空在[-2,2]中选取两个实数，问其和大于1的概率？
-两个数之和大于1，即x+y&gt;1
-则分界: x+y=1
-移动未知数得: y = 1 - x
-其中 x $ \in [-2,2] $ , y $ \in [-2,2] $
+两个数之和大于1，即$x+y&gt;1$
+则分界: $x+y=1$
+移动未知数得: $y = 1 - x$
+其中 $ x \in [-2,2] $ , $ y \in [-2,2] $
+即求表达式，$y=1-x \quad (x\in [-2,2],y\in[-2,2])$，在区间$[-2,2]$ 上 $y&gt;1+x$的面积
 画图求面积
 
 有五支队伍，打循环赛。赢+3，平+1，负-1。前三支队伍出线。问最少拿多少分可以理论出线？
 两支不能出线
 从最低假设开始，最后一名全输，不管多少分（问拿多少分）
-倒数第二名只赢了最后一名，拿1分
-倒数第三也就是正好最后一只出线的队伍，大于倒数第二即可，即拿2分
-
-子网掩码和子网划分例如:
-192.168.0.0/24 —- 子网掩码前2...
+倒数第二名只赢了最...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -522,7 +562,9 @@ DX10为了提高渲染速度，改良渲染架构，不再使用渲染管线的�
 quaternion  quaternion , 例如 q = t  p; 这是将一个点先进行t 操作旋转,然后进行p操作旋转.
 Quaternion  Vector3, 例如 p : Vector3, t : Quaternion , q : Quaternion;    q = t  p; 这是将点p 进性t 操作旋转，即对一个向量进行旋转;
 
-Quaternion 的基本数学方程为 : Q = cos (a/2) + i (x  sin(a/2)) + j (y  sin...
+Quaternion 的基本数学方程为 :   
+
+Q=\cos\frac{angle}{2}+i(x \times \sin \...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -624,15 +666,14 @@ P(A|B) = \frac {P(A) \times P(B|A)} {P(B)...
             公式$E(X)=\sum\limits_{k=1}^{\infty} x_k p_k$
 个人理解数学上希望出现的均值
 例题某盒中有 5 件产品，其中 2 件次品。现随机地从中 2 件，则 2 件中次品数的均值是（）
-答案: 4/5
+答案: $\frac{4}{5}$
 解析次品出现次数：0 , 1 , 2
 
 P(i=0) = \frac{3}{10}\\
 P(i=1) = \frac{6}{10}\\
 P(i=2) = \frac{1}{10}\\
 E = 0 \times P(i=0) + 1 \times P(i=1) + 2 \times P(i=2)
-= 4 / 5即题目在求次品出现的数学期望
-对于二项分布$E = ...
+= \frac{4}{5}即题目在求次品出现的...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -680,42 +721,6 @@ Ubuntu/Deepin下wget -O install.sh http://download.bt.cn/install/install-ubuntu.
         <a class="post-tag" href="javascript:void(0);" data-tags="VPS">VPS</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="宝塔面板">宝塔面板</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/27/Shadowsocks/">
-            
-                <span>Shadowsocks</span>
-        </a>
-        <div class="abstract-content">
-            Shadowsocks是什么Shadowsocks是GitHub上的一个开源项目（原作者Clowwindy因为某些原因移除了），提供双端Socks5代理服务。有人拷贝了一份Shadowsocks的源码，地址 
-Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
-内核升级并开启TcpBBR拥塞控制仅仅安装Shadowsocks是不够的，可以升级内核并开启TcpBBR拥塞控制，提升速度。
-内核的升级用一键脚本完成即可1wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="VPS">VPS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Shadowsocks">Shadowsocks</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Proxy">Proxy</a>
     
 </div>
             
@@ -1105,9 +1110,32 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -1123,6 +1151,11 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Sort/">排序算法笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Markdown-Latex书写公式/">Markdown+Latex书写公式</a>
         </li>
     
@@ -1133,12 +1166,12 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown语法/">Markdown语法</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown语法/">Markdown语法</a>
         </li>
     
     
@@ -1163,11 +1196,6 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
         </li>
     
@@ -1178,7 +1206,7 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
         </li>
     
     
@@ -1188,17 +1216,12 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/渲染管线-Pipeline/">渲染管线-Pipeline</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Quaternion四元数/">Quaternion四元数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
         </li>
     
     
@@ -1208,7 +1231,17 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/贝叶斯公式/">贝叶斯公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Quaternion四元数/">Quaternion四元数</a>
         </li>
     
     
@@ -1247,17 +1280,17 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
         <span class="sidebar-tag-name" data-tags="Probability Theory"><span class="iconfont-archer">&#xe606;</span>Probability Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+    
         <span class="sidebar-tag-name" data-tags="数学期望"><span class="iconfont-archer">&#xe606;</span>数学期望</span>
     
-        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
     
         <span class="sidebar-tag-name" data-tags="Pipeline"><span class="iconfont-archer">&#xe606;</span>Pipeline</span>
     
         <span class="sidebar-tag-name" data-tags="Shader"><span class="iconfont-archer">&#xe606;</span>Shader</span>
     
         <span class="sidebar-tag-name" data-tags="Graphic"><span class="iconfont-archer">&#xe606;</span>Graphic</span>
-    
-        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
     
         <span class="sidebar-tag-name" data-tags="Software"><span class="iconfont-archer">&#xe606;</span>Software</span>
     
@@ -1275,9 +1308,9 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
         <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
     
-        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
-    
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
     
         <span class="sidebar-tag-name" data-tags="Interview"><span class="iconfont-archer">&#xe606;</span>Interview</span>
     
@@ -1291,17 +1324,19 @@ Shadowsocks安装首先需要有一个可以进行登录的VPS，自行购买。
     
         <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
-        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
-    
         <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
     
         <span class="sidebar-tag-name" data-tags="TV"><span class="iconfont-archer">&#xe606;</span>TV</span>
     
         <span class="sidebar-tag-name" data-tags="Tree"><span class="iconfont-archer">&#xe606;</span>Tree</span>
     
         <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Sort"><span class="iconfont-archer">&#xe606;</span>Sort</span>
     
         <span class="sidebar-tag-name" data-tags="Poisson process"><span class="iconfont-archer">&#xe606;</span>Poisson process</span>
     
@@ -1356,6 +1391,8 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Datastruct"><span class="iconfont-archer">&#xe60a;</span>Datastruct</span>
     
+        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
+    
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
     <div class="sidebar-categories-list"></div>
@@ -1389,23 +1426,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

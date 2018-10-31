@@ -276,7 +276,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数: <span class="post-count word-count">64</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数: <span class="post-count word-count">63</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -406,14 +406,13 @@ height:50vh;
             <main class="main post-page">
     
         <article class="article-entry">
-            <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>c#:<br><figure class="highlight plain"><figcaption><span>CamraFollow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class CameraFollow : MonoBehaviour &#123;</span><br><span class="line">    //跟随目标</span><br><span class="line">    public Transform _target;</span><br><span class="line"></span><br><span class="line">    //平滑系数</span><br><span class="line">    public float smoothing;</span><br><span class="line"></span><br><span class="line">    //跟随速度</span><br><span class="line">    private Vector3 velocity;</span><br><span class="line">    </span><br><span class="line">    //写在LateUpdate中</span><br><span class="line">    void LateUpdate () &#123;</span><br><span class="line">        if (_target != null)</span><br><span class="line">        &#123;     </span><br><span class="line">            this.transform.position = Vector3.SmoothDamp(this.transform.position, _target.transform.position, ref velocity, smoothing);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+            <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight csharp"><figcaption><span>CamraFollow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CameraFollow</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line">    <span class="comment">//跟随目标</span></span><br><span class="line">    <span class="keyword">public</span> Transform _target;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//平滑系数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">float</span> smoothing;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//跟随速度</span></span><br><span class="line">    <span class="keyword">private</span> Vector3 velocity;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//写在LateUpdate中</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">LateUpdate</span> (<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (_target != <span class="literal">null</span>)</span><br><span class="line">        &#123;     </span><br><span class="line">            <span class="keyword">this</span>.transform.position = Vector3.SmoothDamp(<span class="keyword">this</span>.transform.position, _target.transform.position, <span class="keyword">ref</span> velocity, smoothing);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </article>
         <!--  Author information  -->
         <div class="license-wrapper" style="margin:10rem 0 0">
             <p>作者：<a href="http://bean.ink">Bean</a>
             </p><p>发表时间：<a href="">October 29th 2018, 2:34:48 am</a>
-            </p><p>最后更新：<a href="">October 29th 2018, 2:53:17 am</a>
+            </p><p>最后更新：<a href="">October 31st 2018, 5:42:18 pm</a>
             </p><p>分类：
                 
                     <span class="sidebar-tag-name" style="color:#000" data-categories="Code"><span class="iconfont-archer">&#xe60a;</span>Code</span>
@@ -435,7 +434,7 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文链接：<a href="http://bean.ink/2018/10/29/Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
             <p>发表时间：<a href="http://bean.ink/2018/10/29/Unity2D中简单的相机跟随/">October 29th 2018, 2:34:48 am</a>
-            <p>最后更新：<a href="http://bean.ink/2018/10/29/Unity2D中简单的相机跟随/"></a>October 29th 2018, 2:53:17 am</a>            
+            <p>最后更新：<a href="http://bean.ink/2018/10/29/Unity2D中简单的相机跟随/"></a>October 31st 2018, 5:42:18 pm</a>            
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
      -->
@@ -867,9 +866,32 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -885,6 +907,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Sort/">排序算法笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Markdown-Latex书写公式/">Markdown+Latex书写公式</a>
         </li>
     
@@ -895,12 +922,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown语法/">Markdown语法</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown语法/">Markdown语法</a>
         </li>
     
     
@@ -925,11 +952,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
         </li>
     
@@ -940,7 +962,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
         </li>
     
     
@@ -950,17 +972,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/渲染管线-Pipeline/">渲染管线-Pipeline</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Quaternion四元数/">Quaternion四元数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
         </li>
     
     
@@ -970,7 +987,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/贝叶斯公式/">贝叶斯公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Quaternion四元数/">Quaternion四元数</a>
         </li>
     
     
@@ -1009,17 +1036,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Probability Theory"><span class="iconfont-archer">&#xe606;</span>Probability Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+    
         <span class="sidebar-tag-name" data-tags="数学期望"><span class="iconfont-archer">&#xe606;</span>数学期望</span>
     
-        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
     
         <span class="sidebar-tag-name" data-tags="Pipeline"><span class="iconfont-archer">&#xe606;</span>Pipeline</span>
     
         <span class="sidebar-tag-name" data-tags="Shader"><span class="iconfont-archer">&#xe606;</span>Shader</span>
     
         <span class="sidebar-tag-name" data-tags="Graphic"><span class="iconfont-archer">&#xe606;</span>Graphic</span>
-    
-        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
     
         <span class="sidebar-tag-name" data-tags="Software"><span class="iconfont-archer">&#xe606;</span>Software</span>
     
@@ -1037,9 +1064,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
     
-        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
-    
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
     
         <span class="sidebar-tag-name" data-tags="Interview"><span class="iconfont-archer">&#xe606;</span>Interview</span>
     
@@ -1053,17 +1080,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
-        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
-    
         <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
     
         <span class="sidebar-tag-name" data-tags="TV"><span class="iconfont-archer">&#xe606;</span>TV</span>
     
         <span class="sidebar-tag-name" data-tags="Tree"><span class="iconfont-archer">&#xe606;</span>Tree</span>
     
         <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Sort"><span class="iconfont-archer">&#xe606;</span>Sort</span>
     
         <span class="sidebar-tag-name" data-tags="Poisson process"><span class="iconfont-archer">&#xe606;</span>Poisson process</span>
     
@@ -1118,6 +1147,8 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Datastruct"><span class="iconfont-archer">&#xe60a;</span>Datastruct</span>
     
+        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
+    
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
     <div class="sidebar-categories-list"></div>
@@ -1153,23 +1184,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

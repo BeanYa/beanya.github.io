@@ -346,12 +346,72 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/10/31/Sort/">
+            
+                <span>排序算法笔记</span>
+        </a>
+        <div class="abstract-content">
+            排序是什么将无序的集合通过一定的算法处理，得到一个有序集合。
+常见的排序算法按难度（个人）分：
+
+基础
+冒泡排序
+选择排序
+
+
+一定难度
+归并排序
+原地归并排序
+桶排序
+二叉排序树
+快速排序
+堆排序
+希尔排序
+
+
+
+冒泡排序描述Bubble Sort 冒泡排序它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。
+原理/过程
+比较相邻的两个元素（一对），如果顺序不符合要求（升序或降序），则调换顺序。
+对每一对元素重复1的...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Note">Note</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Algorithm">Algorithm</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Sort">Sort</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/10/31/Markdown-Latex书写公式/">
             
                 <span>Markdown+Latex书写公式</span>
         </a>
         <div class="abstract-content">
-            <h1 id="在文本中插入公式"><a href="#在文本中插入公式" class="headerlink" title="在文本中插入公式"></a>在文本中插入公式</h1>
+            在文本中插入公式如何在正文中插入公式?markdown中使用关键字对\$ 正文 \$或者\$\$ 正文 \$\$ 在文字插入公式.
+1.在文字的同行中插入公式在文字同行中插入公式使用关键字对$ 正文 $ (同行插入即不分行)可能你会问，那怎么输入‘$’ 符号，使用转移字符就可以，即’$’。
+代码:  我是在文字同行中插入公式: $   f(x)=w^Tx+b $   
+我是在文字同行中插入公式: $   f(x)=w^Tx+b $   
+代码:  我是在文字中插入\$: $$ 我是  f(\$)=\$^Tx+b $$   
+我是在文字中插入$ : $$  f($)=$^Tx+b  $  ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -468,11 +528,11 @@ Markdown是什么谁创造了它？为什么要使用它？怎么使用？谁在
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Markdown">Markdown</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="Demo">Demo</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Hexo">Hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Markdown">Markdown</a>
     
 </div>
             
@@ -561,7 +621,7 @@ Marching Squares 原理
                 <span>Unity2D中简单的相机跟随</span>
         </a>
         <div class="abstract-content">
-            Codec#:CamraFollow12345678910111213141516171819202122using System.Collections;using System.Collections.Generic;using UnityEngine;public class CameraFollow : MonoBehaviour &#123;    //跟随目标    public Transform _target;    //平滑系数    public float smoothing;    //跟随速度    private Vector3 velocity;     ...
+            CodeCamraFollow12345678910111213141516171819202122using System.Collections;using System.Collections.Generic;using UnityEngine;public class CameraFollow : MonoBehaviour &#123;    //跟随目标    public Transform _target;    //平滑系数    public float smoothing;    //跟随速度    private Vector3 velocity;        ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -658,49 +718,6 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
         <a class="post-tag" href="javascript:void(0);" data-tags="VPS">VPS</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Introduction">Introduction</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/29/NextCloud个人网盘安装/">
-            
-                <span>NextCloud个人网盘安装</span>
-        </a>
-        <div class="abstract-content">
-            面板安装面板安装比较简单
-
-去Nextcloud官网下载服务器安装包
-面板安装完LAMP或LNMP之后，添加一个站点，并添加一个数据库，用户名密码自行设置。
-打开刚创建的站点的根目录下，删除所有文件。
-点开面板的文件模块（浏览文件），将下载的服务器安装包.tar.gz文件放置到某个目录下，并且tar -zxcf 文件名.tar.gz解压缩，得到一个nextcloud文件夹。（或者.zip 用unzip命令解压缩，道理同上）
-进入nextcloud文件夹，将所有文件复制到刚创建的站点根目录下。
-打开对应的域名，填写相应的数据即完成安装。
-如果需要打开多端同步，那么域名则需要能在公网解析到，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Software">Software</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Web">Web</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Blog">Blog</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Nextcloud">Nextcloud</a>
     
 </div>
             
@@ -1090,9 +1107,32 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -1108,6 +1148,11 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Sort/">排序算法笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Markdown-Latex书写公式/">Markdown+Latex书写公式</a>
         </li>
     
@@ -1118,12 +1163,12 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown语法/">Markdown语法</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown语法/">Markdown语法</a>
         </li>
     
     
@@ -1148,11 +1193,6 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
         </li>
     
@@ -1163,7 +1203,7 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/VPS安全防护/">VPS安全防护</a>
         </li>
     
     
@@ -1173,17 +1213,12 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/笔试错题/">笔试错题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/渲染管线-Pipeline/">渲染管线-Pipeline</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Quaternion四元数/">Quaternion四元数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
         </li>
     
     
@@ -1193,7 +1228,17 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/数学期望/">数学期望</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/贝叶斯公式/">贝叶斯公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Quaternion四元数/">Quaternion四元数</a>
         </li>
     
     
@@ -1232,17 +1277,17 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
         <span class="sidebar-tag-name" data-tags="Probability Theory"><span class="iconfont-archer">&#xe606;</span>Probability Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+    
         <span class="sidebar-tag-name" data-tags="数学期望"><span class="iconfont-archer">&#xe606;</span>数学期望</span>
     
-        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
     
         <span class="sidebar-tag-name" data-tags="Pipeline"><span class="iconfont-archer">&#xe606;</span>Pipeline</span>
     
         <span class="sidebar-tag-name" data-tags="Shader"><span class="iconfont-archer">&#xe606;</span>Shader</span>
     
         <span class="sidebar-tag-name" data-tags="Graphic"><span class="iconfont-archer">&#xe606;</span>Graphic</span>
-    
-        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
     
         <span class="sidebar-tag-name" data-tags="Software"><span class="iconfont-archer">&#xe606;</span>Software</span>
     
@@ -1260,9 +1305,9 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
         <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
     
-        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
-    
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
     
         <span class="sidebar-tag-name" data-tags="Interview"><span class="iconfont-archer">&#xe606;</span>Interview</span>
     
@@ -1276,17 +1321,19 @@ VultrVultr是一家2014年刚成立的VPS服务商，基于KVM，采用SSD硬盘
     
         <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
-        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
-    
         <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
     
         <span class="sidebar-tag-name" data-tags="TV"><span class="iconfont-archer">&#xe606;</span>TV</span>
     
         <span class="sidebar-tag-name" data-tags="Tree"><span class="iconfont-archer">&#xe606;</span>Tree</span>
     
         <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Sort"><span class="iconfont-archer">&#xe606;</span>Sort</span>
     
         <span class="sidebar-tag-name" data-tags="Poisson process"><span class="iconfont-archer">&#xe606;</span>Poisson process</span>
     
@@ -1341,6 +1388,8 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Datastruct"><span class="iconfont-archer">&#xe60a;</span>Datastruct</span>
     
+        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
+    
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
     <div class="sidebar-categories-list"></div>
@@ -1374,23 +1423,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
