@@ -102,10 +102,14 @@ global:
 - GH_REF: @项目地址@
 ```
 
-# 使用方法
+## 使用方法
 
 * 使用方法即普通的Git add->commit->push 一套Combo，Travis检测到变动会通过trvais.yml编译并提交到master里，Token已经给了Travis写入权限了。
 
 ## 最后结果
 
-最后你会在GitHubPage的项目里看到master分支和创建的hexo项目分支，其中hexo项目分支是自己手动git push上去的，而master分支即展示在GitHubPage上的静态页面是Travis编译完成并push的。
+最后你会在GitHubPage的仓库里看到master分支和创建的hexo项目分支，其中hexo项目分支是自己手动git push上去的，而master分支即展示在GitHubPage上的静态页面是Travis编译完成并push的。
+
+## 参考文章
+
+[](https://www.2cto.com/kf/201605/505702.html)
