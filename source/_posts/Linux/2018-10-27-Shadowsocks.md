@@ -70,7 +70,7 @@ Windows下需要先安装Python，官方说明需要安装对应版本的OpenSSL
 
 以下是一个例子
 
-```
+``` json
 {
 	"server":"*.*.*.*",
 	"local_address":"127.0.0.1",
@@ -122,3 +122,26 @@ Shadowsocks可以在后台常驻，并且第一次生效后就可以关闭启动
 其他程序需要代理时，仅需通过 Socks5 协议，在`127.0.0.1` 1080端口（默认本地代理端口），用户名密码置空或选择不验证即可实现代理。
 
 
+# 多用户
+Enable manager API by specifying --manager-address, which is either a Unix socket or an IP address:
+
+    # Use a Unix socket
+    ssserver --manager-address /var/run/shadowsocks-manager.sock -c tests/server-multi-passwd.json
+    # Use an IP address
+    ssserver --manager-address 127.0.0.1:6001 -c tests/server-multi-passwd.json
+    
+To add a port:
+
+    add: {"server_port": 8001, "password":"7cd308cc059"}
+
+To remove a port:
+
+    remove: {"server_port": 8001}
+    
+echo:
+    
+    echo -n ping > /dev/udp/127.0.0.1/6001
+
+demo:
+
+    ssserver -p 8888 -k password -m aes-256-cfb --manager-address 127.0.0.1:6001

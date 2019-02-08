@@ -49,7 +49,7 @@ GitHubPage对应的项目中，需要新建一个分支，名字任意，用来�
 
 * 选择Developer settings
 
-![Developer settings](https://i.loli.net/2019/02/06/5c5afcc768831.jpg)
+![Developer settings](https://i.loli.net/2019/02/07/5c5be272b6dc2.jpg)
 
 * 选择Personal Acess Token
 
