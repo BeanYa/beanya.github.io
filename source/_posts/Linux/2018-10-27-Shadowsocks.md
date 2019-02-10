@@ -97,13 +97,13 @@ Shadowsocks服务即在后台运行
 
 例如Centos 7（或使用firewall-cmd做防火墙规则的）
 
-`firewall-cmd --zone=public --add-port=端口号/tcp --permanent `
+`firewall-cmd --zone=public --add-port=端口号/tcp --permanent`
 `firewall-cmd --zone=public --add-port=端口号/udp --permanent `
 
 或
 
-`firewall-cmd --zone=public --add-port=端口起始-端口终/tcp --permanent `
-`firewall-cmd --zone=public --add-port=端口起始-端口终/udp --permanent `
+`firewall-cmd --zone=public --add-port=端口起始-端口终/tcp --permanent`
+`firewall-cmd --zone=public --add-port=端口起始-端口终/udp --permanent`
 
 其中`--permanent`为了规则持续生效，若不使用UDP转发，可以去掉第二行。
 
