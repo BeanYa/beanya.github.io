@@ -1,5 +1,5 @@
 ---
-title: Python（一）
+title: Python---变量和数据类型
 date: 2019-07-17 02:16:45
 categories:
 - Python
@@ -7,7 +7,9 @@ tags:
 - Python
 - Note
 ---
-# Python
+## 内容
+
+基本的前提知识和基本数据类型的运算等。
 
 ## 到底在学什么
 
