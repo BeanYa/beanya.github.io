@@ -10,13 +10,7 @@ tags:
 
 ## 什么是函数？
 
-函数的严格定义是：将给定的输入，按照一定的映射关系，映射到一定的输入。
-
-通俗来讲，其实就像流水线，你给我一些原料，我按照规定好的流程，制作出一些产品，这些产品都是一样的。
-
-如果第一批产品和第二批产品产生了不同，那么应该都是来自于原料的不同。
-
-也可以这样认为，函数其实就是一大段重复的代码块。
+函数其实就是一段可以被重复使用的代码，用参数来代替其中的可变部分。
 
 例如，在一个软件里面，我需要打印5行不同的信息：
 
@@ -138,3 +132,79 @@ def add(x,y):
 ```
 
 ## 函数形式和关键词的作用
+
+python中一个函数的形式如下：
+
+``` python
+def functionname( parameters ):
+    "function_docstring"
+    function_body
+    return [expression]
+```
+
+
+`def`关键字是define的缩写，即 “定义”。
+
+`functionname`就是函数的名字，一般是要求符合命名规则，命名规则在变量和数据类型有提及，刚入门不要求记忆，随便命名既可，但要`具意命名`，例如打印函数就叫`print`
+
+> 具意命名就是名字和具体代表的东西要一致，用来表示名字的变量就叫`name`，用做加法的函数就叫`add()`
+
+其中`"function_docstring"`是对函数的说明，运行的时候会跳过。
+
+`function_body`就是函数体，也是一块可以被重复使用的代码块。
+
+`return` 表示将某个值返回的意思，例如写一个加法函数，要把最后结果保存下来，就会把结果值返回。
+
+下面是一个加法函数的例子：
+
+``` python
+def add_two_number(first, second):
+    result = first + second
+    return result
+```
+
+
+上面例子里，有两个参数，`first`和`second`，参数其实就是外来的变量，也是在函数中可变的部分。
+
+这个函数的目的是做加法，加法的结果由两个数影响，这两个数是可变的，但是加法的过程是确定的。
+
+所以，这两个数就是函数的参数了。
+
+`return result`这一句的意思是把`result`变量返回，函数体运行结束后，需要把结果返回给调用者，也就是`return`的作用。
+
+函数被定义，就是需要被使用的，使用的过程被叫做`函数的调用`
+
+那么，怎么调用一个函数呢？
+
+在“Hello World”的例子里：
+
+``` python
+print('Hello World')
+```
+
+其实就是调用了一个函数`print`，`'Hello World'`是他的参数。
+
+上面例子里的加法函数的调用例子如下：
+
+``` python
+def add_two_number(first, second):
+    result = first + second
+    return result
+
+a_number = add_two_number(1,2)
+
+print(a_number)
+```
+
+`add_two_number(1,2)`就是调用了这个函数，参数分别是`1`和`2`，按顺序对应。
+
+可以分解的看成，`a_number = add_two_number(1,2)`这个语句的执行步骤被分成了四部分：
+
+1. a_number = add_two_number(1,2)
+2. 执行跳到add_two_number的代码块来，执行对参数的赋值，也就是`first = 1`和`second = 2`
+3. 执行函数体
+4. 返回结果
+
+函数的`返回值`，可以看做执行后，把赋值语句替换掉，也就是`a_number = add_two_number(1,1)`替换成`a_number = 3`
+
+然后`print(a_number)`的结果就是打印了`3`
