@@ -2,7 +2,10 @@
 title: Pyhton-Funtion
 date: 2019-07-18 16:40:32
 categories:
+- Python
 tags:
+- Python
+- Note
 ---
 ## 为什么讲函数
 
