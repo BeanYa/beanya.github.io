@@ -172,6 +172,10 @@ def add_two_number(first, second):
 
 `return result`这一句的意思是把`result`变量返回，函数体运行结束后，需要把结果返回给调用者，也就是`return`的作用。
 
+>注意，如果不需要返回值，那么可以不用`return`语句
+>
+>假如你只有一个很简单的函数，用来打印一些信息，就不需要有返回值
+
 函数被定义，就是需要被使用的，使用的过程被叫做`函数的调用`
 
 那么，怎么调用一个函数呢？
@@ -208,3 +212,16 @@ print(a_number)
 函数的`返回值`，可以看做执行后，把赋值语句替换掉，也就是`a_number = add_two_number(1,1)`替换成`a_number = 3`
 
 然后`print(a_number)`的结果就是打印了`3`
+
+# 总结一下
+
+函数其实就是一段可以被重复使用的代码，其中的可变部分，或者说依赖于这段代码以外的变量，就是`参数`了。
+
+函数的定义方式就是：
+
+``` python
+def functionname( parameters ):
+    "function_docstring"
+    function_body
+    return [expression]
+```
