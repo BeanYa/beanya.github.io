@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Bean">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Bean">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Python-for循环 · Bean&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/bean.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Bean&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Python-for循环</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Bean's Studio</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Python-for循环
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Note">Note</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Python">Python</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数: <span class="post-count word-count">1.8k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/07/18</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    
+        <article class="article-entry">
+            <h2 id="什么是-for-？"><a href="#什么是-for-？" class="headerlink" title="什么是 for ？"></a>什么是 for ？</h2><p><code>for</code>和<code>while</code>一样，都是流程控制中控制循环的语句。</p>
+<h2 id="为什么有了-while-还要-for-？"><a href="#为什么有了-while-还要-for-？" class="headerlink" title="为什么有了 while 还要 for ？"></a>为什么有了 while 还要 for ？</h2><p>现在有一个<code>while</code>循环，他的目的是执行一百次的<code>print(&#39;Rush B!&#39;)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> a &lt;= <span class="number">100</span>:</span><br><span class="line">    print(<span class="string">'Rush B!'</span>)</span><br><span class="line">    a = a + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>但是有没有觉得，每次都要先声明一个变量<code>a</code>，还要在循环体里让他加<code>1</code>，是不是有些繁琐呢？</p>
+<p><code>for</code>循环就可以省略这样的步骤</p>
+<p>同样的功能，用<code>for</code>的实现是这样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    print(<span class="string">'Rush B!'</span>)</span><br></pre></td></tr></table></figure>
+<p>省去了变量<code>a</code>的提前声明，但是<code>a</code>在循环体里仍然是可以被访问的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    print(<span class="string">'Rush B!'</span>)</span><br><span class="line">    print(<span class="string">'%s times!'</span> % a)</span><br></pre></td></tr></table></figure>
+<p>其中<code>range(100)</code>是一个函数，可以生成从<code>0 - 99</code>的数字序列，也就是100个数。</p>
+<p>为什么是用<code>range(100)</code>来生成序列，下面讲解。</p>
+<h2 id="for-是怎么工作的？"><a href="#for-是怎么工作的？" class="headerlink" title="for 是怎么工作的？"></a>for 是怎么工作的？</h2><p>在讲<code>for</code>之前，需要知道<code>数组</code>或者<code>列表</code>的概念。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>列表其实就是一些变量的有序组合，注意，是<code>有序</code>组合。至于为什么强调有序，看到<code>set</code>等其他数据类型时就能明白。</p>
+<p>假设现在，你需要存储50个同学的数学成绩，在没有<code>列表</code>以前，你需要这样做：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">math1 = <span class="number">0</span></span><br><span class="line">math2 = <span class="number">0</span></span><br><span class="line">math3 = <span class="number">0</span> </span><br><span class="line">math4 = <span class="number">0</span></span><br><span class="line">math5 = <span class="number">0</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">math50 = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>声明50个变量，并且一一赋值。这是很笨的方法，并且效率很低。</p>
+<p>那么，思考一下，是否为上面这些变量每一个单独命名是没有意义的呢？</p>
+<p><code>列表</code>就派上用场了。只要简单声明，就能使用一个列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">math = []</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">math = list()</span><br></pre></td></tr></table></figure>
+<p>不同的是，这个列表一开始并没有限定大小，它可以存储若干个数据。</p>
+<p>需要往列表里面添加数据，用函数<code>math.append()</code>。</p>
+<p>例如我想向列表里面添加1个数字<code>0</code>，那么就是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">math.append(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>并且，列表是可以被直接<code>print()</code>函数打印的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">math = []</span><br><span class="line">math.append(<span class="number">0</span>)</span><br><span class="line">math.append(<span class="number">1</span>)</span><br><span class="line">print(math)</span><br></pre></td></tr></table></figure>
+<p>可以得到结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>中括号表示这是一个<code>列表</code>变量，每个元素以<code>,</code>分隔开。</p>
+<p><code>列表</code>也是一个变量，变量名就代表了一整个<code>列表</code>，如果要访问，或者叫做获取列表里某一个元素的话怎么办呢？</p>
+<p>就需要用到下标，就像数学里头数列的累加公式里，<code>ai</code>是有下标的。</p>
+<p>下标表示，元素在<code>列表</code>中的位置，下标从<code>0</code>开始，访特定位置的<code>列表</code>元素，用<code>列表变量名[下标]</code>的方式访问。</p>
+<p>也就是说，如果现在有一个列表，存储了一组数学成绩：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">math = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">90</span>, <span class="number">40</span>, <span class="number">30</span>]</span><br></pre></td></tr></table></figure>
+<p>可以看出来，这个<code>列表</code>一共包含<code>5</code>个数字，下标从<code>0</code>开始。</p>
+<p>而<code>0-&gt;4</code>一共5个数字，也就是<code>4</code>是<code>列表</code>下标的最大值，<code>0</code>是最小值</p>
+<p>每一个元素的访问方式如下：</p>
+<ul>
+<li>10 —-&gt; math[0]</li>
+<li>20 —-&gt; math[1]</li>
+<li>90 —-&gt; math[2]</li>
+<li>40 —-&gt; math[3]</li>
+<li>30 —-&gt; math[4]</li>
+</ul>
+<p>但是，访问<code>列表</code>的数据，不能超过列表当前的大小。</p>
+<p>比如，现在的<code>math</code>只有<code>5</code>个元素，下标最大的值是<code>4</code>，那么你如果想打印或者使用<code>math[5]</code>，那么会告诉你报错了，错误是：<code>list assignment index out of range</code>，也就是<code>列表</code>下标越界了。</p>
+<blockquote>
+<p>可以通过<code>math.append(0)</code>来向<code>列表</code>添加元素，这里的参数<code>0</code>是任意的，意思是向<code>列表</code>添加元素<code>0</code></p>
+</blockquote>
+<p>那么，像<code>列表</code>这一小标题开头举的例子里讲的，现在知道了能用<code>列表</code>来存储若干个数字，但是要给他们每一个都赋初始值，比如<code>10</code>，是不是还是有点麻烦？</p>
+<p>脑海里是不是想：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">math[<span class="number">0</span>] = <span class="number">10</span></span><br><span class="line">math[<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line">math[<span class="number">2</span>] = <span class="number">10</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">math[<span class="number">49</span>] = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，0 -&gt; 49 一共50个数。</p>
+</blockquote>
+<p>那么，<code>for</code>就派上用场了</p>
+<h3 id="for-在列表例子里的应用"><a href="#for-在列表例子里的应用" class="headerlink" title="for 在列表例子里的应用"></a>for 在列表例子里的应用</h3><p>讲完上面的<code>列表</code>，为什么要强调有序呢？因为有序，你就可以按顺序的，访问，或者叫做获取每一个数字。</p>
+<p>你可以想象有个箭头，从<code>列表</code>的第一个元素，每次往前跳一步，一直走到最后一个元素，这个过程叫做<code>遍历（traverse）</code>。</p>
+<p>而<code>for</code>其实就是在对<code>列表</code>进行这么一个<code>遍历</code>的过程</p>
+<p>通过上一节的<code>函数</code>和这一节的<code>列表</code>，那么<code>range(10)</code>这个<code>函数</code>其实生成了一个<code>列表</code>。</p>
+<p><code>列表</code>里面存储了一排从<code>0</code>开始，到<code>range(x)</code>的<code>x-1</code>为止的等差数列，差是<code>1</code>。</p>
+<blockquote>
+<p>其实，<code>range(x)</code>并不是真的生成了一个<code>列表</code>，他生成的是一个<code>可迭代对象</code>，就像箭头一样，这一次需要用到它，他就告诉你是不是走到了<code>列表</code>的尾巴，如果不是，就返回这个“箭头”指向的数据，如果到尾了，那么就结束<code>迭代</code>。</p>
+<p>但是为了降低理解难度，目前先当做是生成了一个<code>列表</code>就好了，下面也是这么讲的。</p>
+</blockquote>
+<p>也就是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(list(range(<span class="number">10</span>)))</span><br></pre></td></tr></table></figure>
+<p>结果是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>range(10)</code>省略了第一个参数，函数提供了一个默认的参数值，</p>
+<p>所以其实<code>range(10)</code>是<code>range(0,10)</code>，也就是<code>0-10</code>范围的整数</p>
+<p>这一点如果你直接<code>print(range(10))</code>可以得到结果<code>range(0, 10)</code>，也就是为什么上面的打印结果我加了一个<code>list()</code>，让他转换为<code>列表</code>。</p>
+</blockquote>
+<p>那么你就能明白，重复执行50次，不需要重新声明一个变量，再去<code>while</code>的条件里面做判断。</p>
+<p>例如，对上面的例子的补充，想对50个数学成绩<code>依次</code>赋值为<code>10</code>，用<code>for</code>可以是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">math = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">    math.append(i)</span><br><span class="line">    math[i] = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>因为<code>列表</code>不能够访问超过下标的元素，所以需要每次赋值（也就是访问、使用）前，向<code>列表</code>添加一个元素，也就是<code>math.append(i)</code>的作用</p>
+<p>而<code>i</code>，其实也就是<code>遍历</code>过程中的箭头。</p>
+<p>一开始指向<code>range(50)</code>生成<code>列表</code>的第一个元素<code>0</code>，所以<code>i</code>的值就是<code>0</code>。</p>
+<p>下一次的循环里，<code>i</code>就是<code>1</code>，依次类推，直到最后一次循环，<code>i</code>的值是<code>49</code>。</p>
+<p>当然，上面这么写只是为了告诉你，需要先添加、拓展<code>列表</code>，才能访问<code>列表</code>的元素。</p>
+<p>简单的写法其实就是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">math = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">    math.append(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="和while的区别"><a href="#和while的区别" class="headerlink" title="和while的区别"></a>和while的区别</h2><p>在python里，<code>while</code>和<code>for</code>的区别在于，<code>while</code>用来广泛的判断<code>条件</code>是否成立，再进行循环。</p>
+<p>而<code>for</code>的作用在于，用来对一个<code>列表</code>进行<code>迭代</code>或者叫<code>遍历</code>。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>for</code>的形式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> iterating_var <span class="keyword">in</span> sequence:</span><br><span class="line">   statements(s)</span><br></pre></td></tr></table></figure>
+<p>每一次的循环，称作一次<code>迭代</code>，所以<code>iterating_var</code>代表的是，在这次<code>迭代</code>中，当前<code>列表</code>也就是<code>sequence</code>被指向的值。</p>
+<p>可以想象，其实也就是对一个<code>列表</code>，用一个箭头，依次的指向<code>列表</code>里的值，然后执行循环体，再移动到下一个<code>列表</code>的元素。</p>
+
+        </article>
+        <!--  Author information  -->
+        <div class="license-wrapper" style="margin:10rem 0 0">
+            <p>作者：<a href="http://bean.ink">Bean</a>
+            </p><p>发表时间：<a href="">July 18th 2019, 5:40:32 pm</a>
+            </p><p>最后更新：<a href="">August 6th 2019, 6:36:29 am</a>
+            </p><p>分类：
+                
+                    <span class="sidebar-tag-name" style="color:#000" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+                
+            </p>
+            <p>标签：
+                
+                    <span class="sidebar-tag-name" style="color:#000" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+                
+                    <span class="sidebar-tag-name" style="color:#000" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+                
+            </p>
+        </div>
+    
+    <!-- license  -->
+    <!-- 
+        <div class="license-wrapper">
+            <p>原文链接：<a href="http://bean.ink/2019/07/18/Python-for/">Python-for循环</a>
+            <p>发表时间：<a href="http://bean.ink/2019/07/18/Python-for/">July 18th 2019, 5:40:32 pm</a>
+            <p>最后更新：<a href="http://bean.ink/2019/07/18/Python-for/"></a>August 6th 2019, 6:36:29 am</a>            
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+     -->
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/08/06/Python-Loop/" title="Python-循环和if更进一步">
+                    <div class="nextTitle">Python-循环和if更进一步</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/18/Pyhton-Funtion/" title="Pyhton-Funtion">
+                    <div class="prevTitle">Pyhton-Funtion</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="//github.com/beanya" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/WCQR.jpg">
+                </span>
+            
+        
+    
+        
+            
+                <a href="mailto:534646574@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title="qq">
+                  
+                  <img class="profile-qr" src="/assets/QQQR.jpg">
+                </span>
+            
+        
+    
+        
+            
+                <a href="//t.me/beanya" class="iconfont-archer telegram" target="_blank" title="telegram"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+<!-- {% if (theme.mermaid.enable)  %}
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %} -->
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-for-？"><span class="toc-number">1.</span> <span class="toc-text">什么是 for ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么有了-while-还要-for-？"><span class="toc-number">2.</span> <span class="toc-text">为什么有了 while 还要 for ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-是怎么工作的？"><span class="toc-number">3.</span> <span class="toc-text">for 是怎么工作的？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-number">3.1.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-在列表例子里的应用"><span class="toc-number">3.2.</span> <span class="toc-text">for 在列表例子里的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#和while的区别"><span class="toc-number">4.</span> <span class="toc-text">和while的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-number">5.</span> <span class="toc-text">小结</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 34
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href="/2019/08/06/Python-List/">Python-列表</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href="/2019/08/06/Python-Loop/">Python-循环和if更进一步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span><a class="archive-post-title" href="/2019/07/18/Python-for/">Python-for循环</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span><a class="archive-post-title" href="/2019/07/18/Pyhton-Funtion/">Pyhton-Funtion</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/Python-while/">Python--while的循环控制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/Python-代码块/">Python---代码块</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/Python-string/">Python---字符串</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/Python-if/">Python---if一家人</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/Python1/">Python---变量和数据类型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span><a class="archive-post-title" href="/2019/02/10/Centos下防火墙-ss多端口脚本/">Centos下防火墙+ss多端口脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span><a class="archive-post-title" href="/2019/02/10/查询本机IP/">查询本机IP</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href="/2019/02/06/Travis-Hexo自动推送博客/">Travis+Hexo自动推送博客</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href="/2018/11/02/二进制相关/">二进制相关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/2018/11/01/Note-2018-11-01-Computer-Network/">Computer-Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Algorithm-2018-10-31-Sort/">排序算法笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href="/2018/10/31/Markdown-2018-10-31-Markdown-Latex书写公式/">Markdown+Latex书写公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Algorithm-2018-10-30-树的常用公式/">树的常用公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown-2018-10-30-Markdown语法/">Markdown语法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/2018/10/30/Markdown-2018-10-30-VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Algorithm-2018-10-29-Marching-Square/">Marching Square</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-NextCloud个人网盘安装/">NextCloud个人网盘安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-VPS/">VPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-VPS安全防护/">VPS安全防护</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-WordPress安装/">WordPress安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Unity-2018-10-29-Unity2D中简单的相机跟随/">Unity2D中简单的相机跟随</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href="/2018/10/29/Note-2018-10-29-获取随机图片的网站/">获取随机图片的网站</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Unity-2018-10-27-渲染管线-Pipeline/">渲染管线-Pipeline</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-关系运算/">关系运算</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-数学期望/">数学期望</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-贝叶斯公式/">贝叶斯公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Unity-2018-10-27-Quaternion四元数/">Quaternion四元数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Linux-2018-10-27-Shadowsocks/">Shadowsocks</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href="/2018/10/27/Linux-2018-10-27-VPS安装宝塔面板/">VPS安装宝塔面板</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span><a class="archive-post-title" href="/2018/10/26/Math-2018-10-26-泊松过程/">泊松过程</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Interview"><span class="iconfont-archer">&#xe606;</span>Interview</span>
+    
+        <span class="sidebar-tag-name" data-tags="Examination Question"><span class="iconfont-archer">&#xe606;</span>Examination Question</span>
+    
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Binary"><span class="iconfont-archer">&#xe606;</span>Binary</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Tree"><span class="iconfont-archer">&#xe606;</span>Tree</span>
+    
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Sort"><span class="iconfont-archer">&#xe606;</span>Sort</span>
+    
+        <span class="sidebar-tag-name" data-tags="VPS"><span class="iconfont-archer">&#xe606;</span>VPS</span>
+    
+        <span class="sidebar-tag-name" data-tags="Shadowsocks"><span class="iconfont-archer">&#xe606;</span>Shadowsocks</span>
+    
+        <span class="sidebar-tag-name" data-tags="Proxy"><span class="iconfont-archer">&#xe606;</span>Proxy</span>
+    
+        <span class="sidebar-tag-name" data-tags="宝塔面板"><span class="iconfont-archer">&#xe606;</span>宝塔面板</span>
+    
+        <span class="sidebar-tag-name" data-tags="Software"><span class="iconfont-archer">&#xe606;</span>Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web"><span class="iconfont-archer">&#xe606;</span>Web</span>
+    
+        <span class="sidebar-tag-name" data-tags="Blog"><span class="iconfont-archer">&#xe606;</span>Blog</span>
+    
+        <span class="sidebar-tag-name" data-tags="Nextcloud"><span class="iconfont-archer">&#xe606;</span>Nextcloud</span>
+    
+        <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
+    
+        <span class="sidebar-tag-name" data-tags="Security"><span class="iconfont-archer">&#xe606;</span>Security</span>
+    
+        <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Markdown"><span class="iconfont-archer">&#xe606;</span>Markdown</span>
+    
+        <span class="sidebar-tag-name" data-tags="Demo"><span class="iconfont-archer">&#xe606;</span>Demo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Poisson process"><span class="iconfont-archer">&#xe606;</span>Poisson process</span>
+    
+        <span class="sidebar-tag-name" data-tags="Probability Theory"><span class="iconfont-archer">&#xe606;</span>Probability Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="关系运算"><span class="iconfont-archer">&#xe606;</span>关系运算</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学期望"><span class="iconfont-archer">&#xe606;</span>数学期望</span>
+    
+        <span class="sidebar-tag-name" data-tags="贝叶斯公式"><span class="iconfont-archer">&#xe606;</span>贝叶斯公式</span>
+    
+        <span class="sidebar-tag-name" data-tags="Picture"><span class="iconfont-archer">&#xe606;</span>Picture</span>
+    
+        <span class="sidebar-tag-name" data-tags="API"><span class="iconfont-archer">&#xe606;</span>API</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Network"><span class="iconfont-archer">&#xe606;</span>Network</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
+    
+        <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
+    
+        <span class="sidebar-tag-name" data-tags="GameLogic"><span class="iconfont-archer">&#xe606;</span>GameLogic</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pipeline"><span class="iconfont-archer">&#xe606;</span>Pipeline</span>
+    
+        <span class="sidebar-tag-name" data-tags="Shader"><span class="iconfont-archer">&#xe606;</span>Shader</span>
+    
+        <span class="sidebar-tag-name" data-tags="Graphic"><span class="iconfont-archer">&#xe606;</span>Graphic</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="Code"><span class="iconfont-archer">&#xe606;</span>Code</span>
+    
+        <span class="sidebar-tag-name" data-tags="Sample"><span class="iconfont-archer">&#xe606;</span>Sample</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Note"><span class="iconfont-archer">&#xe60a;</span>Note</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
+        <span class="sidebar-category-name" data-categories="Datastruct"><span class="iconfont-archer">&#xe60a;</span>Datastruct</span>
+    
+        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
+    
+        <span class="sidebar-category-name" data-categories="Proxy"><span class="iconfont-archer">&#xe60a;</span>Proxy</span>
+    
+        <span class="sidebar-category-name" data-categories="VPS"><span class="iconfont-archer">&#xe60a;</span>VPS</span>
+    
+        <span class="sidebar-category-name" data-categories="Markdown"><span class="iconfont-archer">&#xe60a;</span>Markdown</span>
+    
+        <span class="sidebar-category-name" data-categories="Math"><span class="iconfont-archer">&#xe60a;</span>Math</span>
+    
+        <span class="sidebar-category-name" data-categories="Network"><span class="iconfont-archer">&#xe60a;</span>Network</span>
+    
+        <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
+    
+        <span class="sidebar-category-name" data-categories="Code"><span class="iconfont-archer">&#xe60a;</span>Code</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Bean"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+
+
