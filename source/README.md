@@ -1,3 +1,0 @@
-# README
-
-For recording something.
