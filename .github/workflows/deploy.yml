@@ -2,8 +2,8 @@ name: Build and Display
 
 on:
   push:
-  	# 配置分支
-    branches: [main]
+    # 配置分支
+    branches: [source]
   workflow_dispatch:
 
 jobs:
