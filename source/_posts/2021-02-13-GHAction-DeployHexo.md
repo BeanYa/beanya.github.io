@@ -1,11 +1,23 @@
 ---
-title: Deploy Demo
+title: Deploy Hexo to github page via github action
 categories:
   - Note
 tags:
   - Note
 date: 2021-02-13 00:00:00
 ---
+
+Travis 最近因为要收费了，从org变com了。
+
+看到原来是github action的原生支持，把原来的CI从Travis搬到了Github action上。
+
+过程中
+
+* Hexo版本和nodejs版本的兼容问题，导致编译失败
+* 原先Travis用的是source branch push到master上的方式，但是github action上这种方式不知道可行还有路上各种ssh、Hexo本身的deploy问题，修改了很多小地方。跑了很多次action。
+* 造成history特别丑
+* 最后发现Hexo官方给出的解决方式还是比较简单的。
+* 结合本地Hexo genereate的方式，修改了脚本如下
 
 # Github Action script 
 
@@ -16,11 +28,11 @@ name: Hexo CI
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push events but only for the master branch
   push:
     branches: [ master ]
   schedule:
-      - cron: '0 22 * * *' # Once per day at midnight
+      - cron: '0 22 * * *' # 6am UTC+8 Everyday
   workflow_dispatch:
   
 jobs:
