@@ -20,7 +20,9 @@ jobs:
       - name: Fetch
         run: git fetch --all
       - name: Copy deploy.yml
-        run: mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
+        run: |
+          mkdir public
+          mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
       - name: Checkout
         run: git checkout origin/source
       - name: Hexo install
