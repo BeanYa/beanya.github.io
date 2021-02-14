@@ -119,6 +119,8 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 x1
 
+# Hexo output
 public/
 
+# Hexo database
 db.json
