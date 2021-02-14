@@ -24,7 +24,7 @@ jobs:
       - name: ls
         run: ls -a
       - name: Copy deploy.yml
-        run: mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
+        run: mv ./.github/workflows/*.* ./public/.github/workflows/*.*
       - name: Checkout
         run: git checkout origin/source
       - name: Hexo install
