@@ -19,8 +19,9 @@ jobs:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: Checkout source branch
-      uses: actions/checkout@v2.3.4
-      
+      uses: actions/checkout@v2
+      with:
+        path: source
     - name: Git status
       run: git status
       
