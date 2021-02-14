@@ -4,7 +4,10 @@ on:
   push:
     # 配置分支
     branches: [source]
-  workflow_dispatch:     
+    
+jobs:
+  build: 
+    runs-on: ubuntu-latest 
     steps:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
