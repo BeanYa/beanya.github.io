@@ -12,6 +12,8 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
+      - name: Copy deploy.yml
+        run: mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -27,8 +29,6 @@ jobs:
         run: npm install
       - name: Build
         run: hexo g
-      - name: Copy deploy.yml
-        run: mv ./.github/workflows/deploy.yml ./public/
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
