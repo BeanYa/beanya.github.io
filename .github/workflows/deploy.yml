@@ -22,7 +22,7 @@ jobs:
       - name: Create dir
         run: mkdir public
       - name: ls
-        run: ls
+        run: ls -a
       - name: Copy deploy.yml
         run: mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
       - name: Checkout
