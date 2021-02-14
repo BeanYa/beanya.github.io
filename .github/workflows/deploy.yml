@@ -19,15 +19,8 @@ jobs:
           node-version: '12.x'
       - name: Fetch
         run: git fetch --all
-      - name: Create dir
-        run: |
-          mkdir public
-          mkdir public/.github
-          mkdir public/.github/workflows
-      - name: Copy deploy.yml
-        run: mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
       - name: Checkout
-        run: git checkout origin/source
+        run: git checkout origin/master
       - name: Hexo install
         run: npm install hexo -g
       - name: Install Dependencies
