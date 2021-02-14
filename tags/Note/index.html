@@ -348,10 +348,18 @@
     <article class="index-post">
         <a class="abstract-title" href="/2021/02/13/GHAction-DeployHexo/">
             
-                <span>Deploy Demo</span>
+                <span>Deploy Hexo to github page via github action</span>
         </a>
         <div class="abstract-content">
-            Github Action script1234567891011121314151617181920212223242526272829303132333435363738# This is a basic workflow to help you get started with Actionsname: Hexo CI# Controls when the action will run. on:  # Triggers the workflow on push or pull request events but only for the master branch  push:...
+            Travis 最近因为要收费了，从org变com了。
+看到原来是github action的原生支持，把原来的CI从Travis搬到了Github action上。
+过程中
+
+Hexo版本和nodejs版本的兼容问题，导致编译失败
+原先Travis用的是source branch push到master上的方式，但是github action上这种方式不知道可行还有路上各种ssh、Hexo本身的deploy问题，修改了很多小地方。跑了很多次action。
+造成history特别丑
+最后发现Hexo官方给出的解决方式还是比较简单的。
+结合本地Hexo genereate的方式，修改了脚本如...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1112,7 +1120,7 @@ Markdown是什么谁创造了它？为什么要使用它？怎么使用？谁在
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href="/2021/02/13/GHAction-DeployHexo/">Deploy Demo</a>
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href="/2021/02/13/GHAction-DeployHexo/">Deploy Hexo to github page via github action</a>
         </li>
     
     
