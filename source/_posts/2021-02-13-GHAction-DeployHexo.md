@@ -52,6 +52,8 @@ jobs:
         run: npm install hexo -g
       - name: Install Dependencies
         run: npm install
+      - name: Clear Hexo
+        run: hexo clean
       - name: Build
         run: hexo g
       - name: Deploy

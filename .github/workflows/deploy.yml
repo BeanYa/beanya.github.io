@@ -3,11 +3,11 @@ name: Hexo CI
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push events but only for the master branch
   push:
     branches: [ master ]
   schedule:
-      - cron: '0 22 * * *' # Once per day at midnight
+      - cron: '0 22 * * *' # 6am UTC+8 Everyday
   workflow_dispatch:
   
 jobs:
@@ -27,6 +27,8 @@ jobs:
         run: npm install hexo -g
       - name: Install Dependencies
         run: npm install
+      - name: Clear Hexo
+        run: hexo clean
       - name: Build
         run: hexo g
       - name: Deploy
