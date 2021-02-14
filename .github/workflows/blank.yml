@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '12.x'
       - name: Fetch
-        run: git fetch -all
+        run: git fetch --all
       - name: Checkout
         run: git checkout origin/source
       - name: Hexo install
