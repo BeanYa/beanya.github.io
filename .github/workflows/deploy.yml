@@ -18,11 +18,14 @@ jobs:
     steps:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
-    - name: use git
+    - name: Use git
       uses: actions/checkout@v2
+    
+    - name: Git pull
+      run: git fetch --all
 
     - name: Checkout
-      run: git checkout origin/source
+      run: git checkout source
     
     - name: Git status
       run: git status
