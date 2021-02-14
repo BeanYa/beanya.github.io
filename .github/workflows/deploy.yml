@@ -22,7 +22,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Checkout
-      run: git checkout source
+      run: git checkout origin/source
     
     - name: Git status
       run: git status
