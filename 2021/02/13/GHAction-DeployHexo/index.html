@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数: <span class="post-count word-count">118</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数: <span class="post-count word-count">134</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -402,42 +402,13 @@ height:50vh;
             <main class="main post-page">
     
         <article class="article-entry">
-            <h1 id="Github-Action-script"><a href="#Github-Action-script" class="headerlink" title="Github Action script"></a>Github Action script</h1><p>name: Build and Display</p>
-<p>on:<br>  push:</p>
-<pre><code># 配置分支
-branches: [source]
-</code></pre><p>  workflow_dispatch:</p>
-<p>jobs:<br>  build-and-deploy:<br>    runs-on: ubuntu-latest<br>    steps:</p>
-<pre><code>- name: Check out
-  uses: actions/checkout@v2.3.4
-- name: set up node
-  uses: actions/setup-node@v2.1.4
-  with:
-    node-version: 14.x
-- name: Install hexo
-  run: |
-    npm install hexo-cli -g
-    npm install hexo --no-optional
-- name: Build
-  run: hexo g
-- name: Commit
-  run: |
-    git config --local user.email &quot;beanya@github.github.com&quot;
-    git config --local user.name &quot;beanya&quot;
-    git add .
-    git commit -m &quot;Commit by Github Action&quot; -a
-- name: Push
-  uses: ad-m/github-push-action@master
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    branch: ${{ github.ref }}
-</code></pre>
+            <h1 id="Github-Action-script"><a href="#Github-Action-script" class="headerlink" title="Github Action script"></a>Github Action script</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># This is a basic workflow to help you get started with Actions</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">Hexo</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Controls when the action will run. </span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># Triggers the workflow on push or pull request events but only for the master branch</span></span><br><span class="line"><span class="attr">  push:</span></span><br><span class="line"><span class="attr">    branches:</span> <span class="string">[</span> <span class="string">master</span> <span class="string">]</span></span><br><span class="line"><span class="attr">  schedule:</span></span><br><span class="line"><span class="attr">      - cron:</span> <span class="string">'0 22 * * *'</span> <span class="comment"># Once per day at midnight</span></span><br><span class="line"><span class="attr">  workflow_dispatch:</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  pages:</span></span><br><span class="line"><span class="attr">    runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"><span class="attr">      - uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">12.</span><span class="string">x</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line"><span class="attr">        with:</span></span><br><span class="line"><span class="attr">          node-version:</span> <span class="string">'12.x'</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Fetch</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">git</span> <span class="string">fetch</span> <span class="bullet">--all</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Checkout</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">git</span> <span class="string">checkout</span> <span class="string">origin/master</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Hexo</span> <span class="string">install</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo</span> <span class="bullet">-g</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Build</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line"><span class="attr">        with:</span></span><br><span class="line"><span class="attr">          github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">          publish_dir:</span> <span class="string">./public</span></span><br><span class="line"><span class="attr">          publish_branch:</span> <span class="string">gh-page</span>  <span class="comment"># deploying branch</span></span><br></pre></td></tr></table></figure>
         </article>
         <!--  Author information  -->
         <div class="license-wrapper" style="margin:10rem 0 0">
             <p>作者：<a href="http://bean.ink">Bean</a>
             </p><p>发表时间：<a href="">February 13th 2021, 12:00:00 am</a>
-            </p><p>最后更新：<a href="">February 14th 2021, 3:50:18 pm</a>
+            </p><p>最后更新：<a href="">February 14th 2021, 4:22:43 pm</a>
             </p><p>分类：
                 
                     <span class="sidebar-tag-name" style="color:#000" data-categories="Note"><span class="iconfont-archer">&#xe60a;</span>Note</span>
@@ -455,7 +426,7 @@ branches: [source]
         <div class="license-wrapper">
             <p>原文链接：<a href="http://bean.ink/2021/02/13/GHAction-DeployHexo/">Deploy Demo</a>
             <p>发表时间：<a href="http://bean.ink/2021/02/13/GHAction-DeployHexo/">February 13th 2021, 12:00:00 am</a>
-            <p>最后更新：<a href="http://bean.ink/2021/02/13/GHAction-DeployHexo/"></a>February 14th 2021, 3:50:18 pm</a>            
+            <p>最后更新：<a href="http://bean.ink/2021/02/13/GHAction-DeployHexo/"></a>February 14th 2021, 4:22:43 pm</a>            
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
      -->
