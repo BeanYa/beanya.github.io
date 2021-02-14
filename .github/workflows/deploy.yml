@@ -16,6 +16,15 @@ jobs:
   build: 
     runs-on: ubuntu-latest 
     steps:
+    - name: Setup Deploy Private Key
+      env:
+        HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.PS }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa 
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: Use git
@@ -37,18 +46,10 @@ jobs:
         node-version: "14.x"
     
     - name: Setup Hexo Dependencies
-      run: |
-        npm install hexo-cli -g
-        npm install
-    
-    - name: Setup Deploy Private Key
-      env:
-        HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.PS }}
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa 
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
+      run: npm install hexo -g
+        
+    - name: NPM install
+      run: npm install
         
     - name: Setup Git Infomation
       run: | 
