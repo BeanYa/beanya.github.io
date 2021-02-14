@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: hexo g
       - name: Copy deploy.yml
-        run: mv ./.github/worflows/deploy.yml ./public/
+        run: mv ./.github/workflows/deploy.yml ./public/
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
