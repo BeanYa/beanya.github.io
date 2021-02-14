@@ -21,6 +21,8 @@ jobs:
         run: git fetch --all
       - name: Create dir
         run: mkdir public
+      - name: ls
+        run: ls
       - name: Copy deploy.yml
         run: mv ./.github/workflows/deploy.yml ./public/.github/workflows/deploy.yml
       - name: Checkout
