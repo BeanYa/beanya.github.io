@@ -8,7 +8,7 @@ layout: about
 
 # What I want to be ?
 
-## A Game Programmer
+## A Programmer
 
 # What this site For?
 
