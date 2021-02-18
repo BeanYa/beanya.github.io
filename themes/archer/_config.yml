@@ -10,7 +10,7 @@ social:
   github: //github.com/beanya
   # wechat and qq should be a path of qr-code image
   wechat: /assets/WCQR.jpg
-  email: 534646574@qq.com
+  email: isbean@qq.com
   qq: /assets/QQQR.jpg
   telegram: //t.me/beanya
   weibo: 
@@ -120,3 +120,8 @@ copyright:
   enable: true
   # https://creativecommons.org/
   license: '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
+
+mathjax:
+  enable: true
+  per_page: true
+  cdn: http://cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
