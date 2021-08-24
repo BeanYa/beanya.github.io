@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Computer-Network · Bean&#39;s Studio</title>
+    <title>Github-SSHKey相关 · Bean&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">Bean&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Computer-Network</a>
+                <a href="#" class="post-name">Github-SSHKey相关</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Computer-Network
+            Github-SSHKey相关
             <!-- 404 -->
             
         </h1>
@@ -268,18 +268,16 @@ height:50vh;
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Note">Note</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Network">Network</a>
-    
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数: <span class="post-count word-count">414</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数: <span class="post-count word-count">96</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/11/01</span>
+                    <span class="post-intro-time">2021/08/24</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -404,69 +402,30 @@ height:50vh;
             <main class="main post-page">
     
         <article class="article-entry">
-            <h1 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h1><p>32位的连续1，用于划分子网。</p>
-<p>例：1111 1111 1111 1111 1111 1111 1111 1111 = 255 255 255 255 = 255.255.255.255</p>
-<h1 id="CIDR"><a href="#CIDR" class="headerlink" title="CIDR"></a>CIDR</h1><p>192.168.1.0/24，表示32位中前24位为网络前缀（个人理解为主路由的IP地址），即还有8位用于表示<code>SubnetID</code>与<code>HostID</code></p>
-<p>例：<br>192.168.1.0/24 使用掩码255.255.255.240 划分子网，其可用子网数为（），每个子网内可用主机地址数为（）</p>
-<ul>
-<li>$Length(255.255.255.240)= 8+8+8+4 = 28$，子网数为 $2^{28-24}=2^4=16$个，除去子网全0和全1的地址，子网数为$16-2=14$个。</li>
-<li>32位中剩余4位，同划分子网，也有$16$个HostID，再去掉全0和全1<br>答案： $14\quad14$</li>
-</ul>
-<h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h1 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h1><h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><ul>
-<li>HTTP 协议是TCP/IP家族的一员，工作于应用层。</li>
-<li>构建于TCP/IP上，默认端口为80</li>
-<li>HTTP的连接是无状态的</li>
-</ul>
-<h2 id="HTTP包"><a href="#HTTP包" class="headerlink" title="HTTP包"></a>HTTP包</h2><p>HTTP的包形如：</p>
-<pre><code>&lt;Method&gt; &lt;RequestURL&gt; &lt;Version&gt;
-
-&lt;Headers&gt;
-
-&lt;entity-body&gt;
-</code></pre><p>Method包含四种方法:</p>
-<ul>
-<li>GET — 查</li>
-<li>POST — 增</li>
-<li>DELETE — 删</li>
-<li>PUT — 改</li>
-</ul>
-<h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><p>GET方法应只用于信息的获取，不增加/修改数据或影响数据的状态，是安全且幂等的。</p>
+            <h1 id="Github-SSH-Key"><a href="#Github-SSH-Key" class="headerlink" title="Github SSH Key"></a>Github SSH Key</h1><p><code>Github</code> 上如果想用 <code>git@github.com</code> 的ssh方式，需要在GitHub的Setting里配上客户机的SSHKey的。</p>
+<h1 id="SSH-Key-Win10-生成方式"><a href="#SSH-Key-Win10-生成方式" class="headerlink" title="SSH Key - Win10 生成方式"></a>SSH Key - Win10 生成方式</h1><h2 id="检查已有SSH-Key"><a href="#检查已有SSH-Key" class="headerlink" title="检查已有SSH Key"></a>检查已有SSH Key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>得到的形如</p>
 <blockquote>
-<p>幂等：对同一URL地址发起的多个请求应该得到相同的结果</p>
+<p>ssh-rsa …………….</p>
 </blockquote>
-<p>GET请求报文示例：</p>
-<pre><code>GET /books/?sex=man&amp;name=Professional HTTP/1.1
-Host: www.example.com
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
-Gecko/20050225 Firefox/1.0.1
-Connection: Keep-Alive
-</code></pre><p>POST请求报文示例：</p>
-<pre><code>POST / HTTP/1.1
-Host: www.example.com
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
-Gecko/20050225 Firefox/1.0.1
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 40
-Connection: Keep-Alive
-
-sex=man&amp;name=Professional  
-</code></pre><h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2>
+<p>就是SSH Key了，将其添加到GitHub-Setting-SSH&amp;GPGKey里即可。</p>
+<h2 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH Key"></a>生成SSH Key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"some comment"</span></span><br></pre></td></tr></table></figure>
+<p>一路回车即可，生成完成后查看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~\.ssh\id_rsa.pub</span><br></pre></td></tr></table></figure>
         </article>
         <!--  Author information  -->
         <div class="license-wrapper" style="margin:10rem 0 0">
             <p>作者：<a href="http://bean.ink">Bean</a>
-            </p><p>发表时间：<a href="">November 1st 2018, 2:28:51 pm</a>
+            </p><p>发表时间：<a href="">August 24th 2021, 5:16:23 pm</a>
             </p><p>最后更新：<a href="">August 24th 2021, 9:37:16 am</a>
             </p><p>分类：
                 
-                    <span class="sidebar-tag-name" style="color:#000" data-categories="Network"><span class="iconfont-archer">&#xe60a;</span>Network</span>
+                    <span class="sidebar-tag-name" style="color:#000" data-categories="Note"><span class="iconfont-archer">&#xe60a;</span>Note</span>
                 
             </p>
             <p>标签：
                 
                     <span class="sidebar-tag-name" style="color:#000" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-                
-                    <span class="sidebar-tag-name" style="color:#000" data-tags="Network"><span class="iconfont-archer">&#xe606;</span>Network</span>
                 
             </p>
         </div>
@@ -474,9 +433,9 @@ sex=man&amp;name=Professional
     <!-- license  -->
     <!-- 
         <div class="license-wrapper">
-            <p>原文链接：<a href="http://bean.ink/2018/11/01/Note-2018-11-01-Computer-Network/">Computer-Network</a>
-            <p>发表时间：<a href="http://bean.ink/2018/11/01/Note-2018-11-01-Computer-Network/">November 1st 2018, 2:28:51 pm</a>
-            <p>最后更新：<a href="http://bean.ink/2018/11/01/Note-2018-11-01-Computer-Network/"></a>August 24th 2021, 9:37:16 am</a>            
+            <p>原文链接：<a href="http://bean.ink/2021/08/24/Github-SSHKey相关/">Github-SSHKey相关</a>
+            <p>发表时间：<a href="http://bean.ink/2021/08/24/Github-SSHKey相关/">August 24th 2021, 5:16:23 pm</a>
+            <p>最后更新：<a href="http://bean.ink/2021/08/24/Github-SSHKey相关/"></a>August 24th 2021, 9:37:16 am</a>            
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
      -->
@@ -484,17 +443,12 @@ sex=man&amp;name=Professional
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/11/02/二进制相关/" title="二进制相关">
-                    <div class="nextTitle">二进制相关</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/10/31/Markdown-2018-10-31-Markdown-Latex书写公式/" title="Markdown+Latex书写公式">
-                    <div class="prevTitle">Markdown+Latex书写公式</div>
+                <a href="/2021/02/13/GHAction-DeployHexo/" title="Deploy Hexo to github page via github action">
+                    <div class="prevTitle">Deploy Hexo to github page via github action</div>
                 </a>
             
         </li>
@@ -632,7 +586,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#子网掩码"><span class="toc-number">1.</span> <span class="toc-text">子网掩码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CIDR"><span class="toc-number">2.</span> <span class="toc-text">CIDR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Socket"><span class="toc-number">3.</span> <span class="toc-text">Socket</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP"><span class="toc-number">4.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#UDP"><span class="toc-number">5.</span> <span class="toc-text">UDP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP"><span class="toc-number">6.</span> <span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP包"><span class="toc-number">6.1.</span> <span class="toc-text">HTTP包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET"><span class="toc-number">6.2.</span> <span class="toc-text">GET</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POST"><span class="toc-number">6.3.</span> <span class="toc-text">POST</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Github-SSH-Key"><span class="toc-number">1.</span> <span class="toc-text">Github SSH Key</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSH-Key-Win10-生成方式"><span class="toc-number">2.</span> <span class="toc-text">SSH Key - Win10 生成方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查已有SSH-Key"><span class="toc-number">2.1.</span> <span class="toc-text">检查已有SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成SSH-Key"><span class="toc-number">2.2.</span> <span class="toc-text">生成SSH Key</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

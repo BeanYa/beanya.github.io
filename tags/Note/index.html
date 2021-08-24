@@ -346,6 +346,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2021/08/24/Github-SSHKey相关/">
+            
+                <span>Github-SSHKey相关</span>
+        </a>
+        <div class="abstract-content">
+            Github SSH KeyGithub 上如果想用 git@github.com 的ssh方式，需要在GitHub的Setting里配上客户机的SSHKey的。
+SSH Key - Win10 生成方式检查已有SSH Key1cat ~/.ssh/id_rsa.pub
+得到的形如
+
+ssh-rsa …………….
+
+就是SSH Key了，将其添加到GitHub-Setting-SSH&amp;GPGKey里即可。
+生成SSH Key1ssh-keygen -t rsa -C "some comment"
+一路回车即可，生成完成后查看：
+1cat ~\.ssh\id_rsa.pub
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Note">Note</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2021/02/13/GHAction-DeployHexo/">
             
                 <span>Deploy Hexo to github page via github action</span>
@@ -1000,9 +1038,30 @@ Markdown是什么谁创造了它？为什么要使用它？怎么使用？谁在
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 23
+        Total : 24
         </div>
         <!-- search  -->
         
@@ -1015,6 +1074,11 @@ Markdown是什么谁创造了它？为什么要使用它？怎么使用？谁在
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href="/2021/08/24/Github-SSHKey相关/">Github-SSHKey相关</a>
+        </li>
     
     
         <li class="archive-post-item">
