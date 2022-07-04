@@ -116,6 +116,8 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     ![换源图](https://img2020.cnblogs.com/blog/2065380/202011/2065380-20201125003339649-262684308.png)
 
+    >图挂了去cnblog原址看
+
     具体代码：[Debian](https://www.debian.org/releases/index.zh-cn.html)
 
 6. 更新仓库
