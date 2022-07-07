@@ -62,7 +62,7 @@ profile_links:
 
 # ========== Site ========== #
 # title of the site (good for SEO)
-SEO_title: fi3ework's Studio
+SEO_title: Bean's Studio
 # keywords for site (good for SEO)
 SEO_keywords:
   - hexo
@@ -192,7 +192,7 @@ outdated_threshold:
   specify_article: false
 # Mermaid Chart: https://github.com/knsv/mermaid
 mermaid:
-  enable: false
+  enable: true
   # Version number '8' is for the latest '8.x' version of Mermaid.
   version: 8.11.0
   theme: dark
