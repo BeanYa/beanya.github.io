@@ -1,5 +1,5 @@
 ---
-title: Deploy Hexo to github page via github action
+title: 用GitHub Action部署Hexo
 categories:
   - Note
 tags:
