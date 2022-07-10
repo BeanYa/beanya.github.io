@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Beans Blog">
 <meta property="og:description" content="面板安装面板安装比较简单  去Nextcloud官网下载服务器安装包 面板安装完LAMP或LNMP之后，添加一个站点，并添加一个数据库，用户名密码自行设置。 打开刚创建的站点的根目录下，删除所有文件。 点开面板的文件模块（浏览文件），将下载的服务器安装包.tar.gz文件放置到某个目录下，并且tar -zxcf 文件名.tar.gz解压缩，得到一个nextcloud文件夹。（或者.zip 用unz">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2022-07-09T22:17:36.160Z">
+<meta property="og:updated_time" content="2022-07-10T15:27:13.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NextCloud个人网盘安装">
 <meta name="twitter:description" content="面板安装面板安装比较简单  去Nextcloud官网下载服务器安装包 面板安装完LAMP或LNMP之后，添加一个站点，并添加一个数据库，用户名密码自行设置。 打开刚创建的站点的根目录下，删除所有文件。 点开面板的文件模块（浏览文件），将下载的服务器安装包.tar.gz文件放置到某个目录下，并且tar -zxcf 文件名.tar.gz解压缩，得到一个nextcloud文件夹。（或者.zip 用unz">
@@ -517,13 +517,15 @@
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
 <li>我这里用的是阿里云的域名，用的是校园网，并且网页端可以正常打开Nextcloud（虽然速度非常的慢）。如果简单的打开Nextcloud的桌面端或手机端，很容易提示<code>找不到主机名</code>或<code>404 NOT FOUND</code>等等错误。</li>
 <li>主要原因猜想在于校园网DNS污染严重，并且阿里云的域名解析线路选择不正确，导致不能正确的解析服务器的IP，（cmd 测试<code>ping 域名</code>时发生找不到主机的错误 ）需要正确配置解析路线并且绕开校园网（即代理）。应该是存在SSL证书的解析问题。</li>
-<li>最后多端同步时<ul>
-<li>Windows端因为已经安装并配置好了shadowsocks，所以在桌面端的网络设置里，打开代理，选择Socks5协议，地址填<code>127.0.0.1</code>，端口<code>1080</code>，不验证即可。</li>
-<li>Web端Chrome里用的是SwitchyOmega，将站点选择用代理连接即可</li>
-<li>手机端则开启安卓版的Shadowsocks即可。</li>
-</ul>
+<li><p>最后多端同步时</p>
 </li>
-<li>还有一种方案就是等，等到dns的解析全面生效，但并不能稳定性和性能。</li>
+<li><p>Windows端因为已经安装并配置好了shadowsocks，所以在桌面端的网络设置里，打开代理，选择Socks5协议，地址填<code>127.0.0.1</code>，端口<code>1080</code>，不验证即可。</p>
+</li>
+<li>Web端Chrome里用的是SwitchyOmega，将站点选择用代理连接即可</li>
+<li><p>手机端则开启安卓版的Shadowsocks即可。</p>
+</li>
+<li><p>还有一种方案就是等，等到dns的解析全面生效，但并不能稳定性和性能。</p>
+</li>
 </ul>
 <h1 id="非面板安装"><a href="#非面板安装" class="headerlink" title="非面板安装"></a>非面板安装</h1><p>非面板安装过程较为繁琐，用<a href="https://lnmp.org/" target="_blank" rel="noopener">一键包</a>安装LAMP或LNMP架构，再添加站点，并且选择自动SSL证书申请，填写数据库等相应信息，后续过程与面板安装的1-6相似。</p>
 
@@ -534,7 +536,7 @@
             <p>原文作者：<a href="http://bean.ink">Bean</a>
             </p><p>原文链接：<a href="http://bean.ink/2018/10/29/Linux-2018-10-29-NextCloud个人网盘安装/">http://bean.ink/2018/10/29/Linux-2018-10-29-NextCloud个人网盘安装/</a>
             </p><p>发表日期：<a href="http://bean.ink/2018/10/29/Linux-2018-10-29-NextCloud个人网盘安装/">October 29th 2018, 2:30:46 am</a>
-            </p><p>更新日期：<a href="http://bean.ink/2018/10/29/Linux-2018-10-29-NextCloud个人网盘安装/">July 9th 2022, 10:17:36 pm</a>
+            </p><p>更新日期：<a href="http://bean.ink/2018/10/29/Linux-2018-10-29-NextCloud个人网盘安装/">July 10th 2022, 3:27:13 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1061,7 +1063,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">02/13</span>
-            <a class="archive-post-title" href="/2021/02/13/GHAction-DeployHexo/">Deploy Hexo to github page via github action</a>
+            <a class="archive-post-title" href="/2021/02/13/GHAction-DeployHexo/">用GitHub Action部署Hexo</a>
         </li>
     
         
@@ -1109,7 +1111,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/01</span>
-            <a class="archive-post-title" href="/2018/11/01/Note-2018-11-01-Computer-Network/">Computer-Network</a>
+            <a class="archive-post-title" href="/2018/11/01/Note-2018-11-01-Computer-Network/">计算机网络相关</a>
         </li>
     
         
