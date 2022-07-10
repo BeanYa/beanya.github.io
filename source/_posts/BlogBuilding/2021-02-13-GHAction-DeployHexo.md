@@ -20,7 +20,7 @@ Travis 最近因为要收费了，从org变com了。
 * 最后发现Hexo官方给出的解决方式还是比较简单的。
 * 结合本地Hexo genereate的方式，修改了脚本如下
 
-# Github Action script 
+# Github Action script
 
 ``` yaml
 

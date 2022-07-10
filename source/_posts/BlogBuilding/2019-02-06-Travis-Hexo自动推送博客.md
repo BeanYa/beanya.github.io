@@ -70,38 +70,38 @@ GitHubPage对应的项目中，需要新建一个分支，名字任意，用来�
 
 * 在Hexo项目中，新建'.travis.yml'文件，填入：
 
-``` yml
-language: node_js
-node_js: stable
+    ```yml
+    language: node_js
+    node_js: stable
 
-# S: Build Lifecycle
-install:
-- npm install
+    # S: Build Lifecycle
+    install:
+    - npm install
 
 
-#before_script:
-# - npm install -g gulp
+    #before_script:
+    # - npm install -g gulp
 
-script:
-- hexo g
+    script:
+    - hexo g
 
-after_script:
-- cd ./public
-- git init
-- git config user.name "@Github用户名@"
-- git config user.email "@Github邮箱@"
-- git add .
-- git commit -m "Update docs"
-- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-# E: Build LifeCycle
+    after_script:
+    - cd ./public
+    - git init
+    - git config user.name "@Github用户名@"
+    - git config user.email "@Github邮箱@"
+    - git add .
+    - git commit -m "Update docs"
+    - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+    # E: Build LifeCycle
 
-branches:
-only:
-    - @创建的分支@
-env:
-global:
-- GH_REF: @项目地址@
-```
+    branches:
+    only:
+        - @创建的分支@
+    env:
+    global:
+    - GH_REF: @项目地址@
+    ```
 
 ## 使用方法
 
