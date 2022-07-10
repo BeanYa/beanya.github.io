@@ -25,7 +25,7 @@ Shadowsocks是GitHub上的一个开源项目（原作者Clowwindy因为某些原
 
 内核的升级用一键脚本完成即可
 
-```
+``` bash
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 ```
 
