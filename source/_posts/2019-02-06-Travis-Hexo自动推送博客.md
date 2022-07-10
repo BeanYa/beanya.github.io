@@ -31,7 +31,7 @@ Travis支持GitHub账号直接登录，直接用GitHub账号授权即可。
 
 注册后如图
 
-![](https://i.loli.net/2019/02/06/5c5afb068ebdf.jpg)
+![注册图](https://i.loli.net/2019/02/06/5c5afb068ebdf.jpg)
 
 左侧选项卡点击加号，激活你的GitHubPage项目。
 

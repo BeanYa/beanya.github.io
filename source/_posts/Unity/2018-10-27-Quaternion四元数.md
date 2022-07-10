@@ -9,13 +9,13 @@ tags:
 - GameLogic
 ---
 ## 旋转操作
+
  在unity3d中, quaternion 的乘法操作 (operator  * ) 有两种操作:
 
-1. quaternion * quaternion , 例如 q = t * p; 这是将一个点先进行t 操作旋转,然后进行p操作旋转.
-2. Quaternion * Vector3, 例如 p : Vector3, t : Quaternion , q : Quaternion;    q = t * p; 这是将点p 进性t 操作旋转，即对一个向量进行旋转;
+1. quaternion *quaternion , 例如 q = t* p; 这是将一个点先进行t 操作旋转,然后进行p操作旋转.
+2. Quaternion *Vector3, 例如 p : Vector3, t : Quaternion , q : Quaternion;    q = t* p; 这是将点p 进性t 操作旋转，即对一个向量进行旋转;
 
-
-Quaternion 的基本数学方程为 :   
+Quaternion 的基本数学方程为 :
 $$
 Q=\cos\frac{angle}{2}+i(x \times \sin \frac{a}{2})+j(y \times \sin \frac{a}{2})+k(z \times \sin \frac{a}{2}) \qquad(a 为旋转角度)\\
 \\

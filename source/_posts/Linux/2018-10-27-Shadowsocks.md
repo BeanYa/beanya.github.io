@@ -11,8 +11,9 @@ tags:
 ---
 
 # Shadowsocks是什么
+
 Shadowsocks是GitHub上的一个开源项目（原作者Clowwindy因为某些原因移除了），提供双端Socks5代理服务。
-有人拷贝了一份Shadowsocks的源码，[地址](https://github.com/ziggear/shadowsocks) 
+有人拷贝了一份Shadowsocks的源码，[地址](https://github.com/ziggear/shadowsocks)
 
 # Shadowsocks安装
 
@@ -23,9 +24,11 @@ Shadowsocks是GitHub上的一个开源项目（原作者Clowwindy因为某些原
 仅仅安装Shadowsocks是不够的，可以升级内核并开启TcpBBR拥塞控制，提升速度。
 
 内核的升级用一键脚本完成即可
+
 ```
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 ```
+
 参考来自[秋水逸冰](https://teddysun.com/489.html)
 
 升级完成并重启系统后，输入`uname -r` 可以查看内核版本，再用`lsmod | grep bbr`查看bbr模块是否开启成功，一般会输出`tcp_bbr *****`即可，也可能没有，不同VPS不同结果。
@@ -35,13 +38,15 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 官方提供Python版的安装
 
 Debian / Ubuntu:
-```
+
+``` bash
 apt-get install python-pip
 pip install shadowsocks
 ```
 
 CentOS:
-```
+
+``` bash
 yum install python-setuptools && easy_install pip
 pip install shadowsocks
 ```
@@ -72,15 +77,15 @@ Windows下需要先安装Python，官方说明需要安装对应版本的OpenSSL
 
 ``` json
 {
-	"server":"*.*.*.*",
-	"local_address":"127.0.0.1",
-	"local_port":1080,
-	"port_password":{
-		"8888":"temp",
+ "server":"*.*.*.*",
+ "local_address":"127.0.0.1",
+ "local_port":1080,
+ "port_password":{
+  "8888":"temp",
         "8989":"temp"
     },
-	"timeout":300,
-	"method":"aes-256-cfb"
+ "timeout":300,
+ "method":"aes-256-cfb"
 }
 ```
 
@@ -98,7 +103,7 @@ Shadowsocks服务即在后台运行
 例如Centos 7（或使用firewall-cmd做防火墙规则的）
 
 `firewall-cmd --zone=public --add-port=端口号/tcp --permanent`
-`firewall-cmd --zone=public --add-port=端口号/udp --permanent `
+`firewall-cmd --zone=public --add-port=端口号/udp --permanent`
 
 或
 
@@ -121,27 +126,37 @@ Shadowsocks可以在后台常驻，并且第一次生效后就可以关闭启动
 
 其他程序需要代理时，仅需通过 Socks5 协议，在`127.0.0.1` 1080端口（默认本地代理端口），用户名密码置空或选择不验证即可实现代理。
 
-
 # 多用户
+
 Enable manager API by specifying --manager-address, which is either a Unix socket or an IP address:
 
+``` bash
     # Use a Unix socket
     ssserver --manager-address /var/run/shadowsocks-manager.sock -c tests/server-multi-passwd.json
     # Use an IP address
     ssserver --manager-address 127.0.0.1:6001 -c tests/server-multi-passwd.json
-    
+```
+
 To add a port:
 
+``` bash
     add: {"server_port": 8001, "password":"7cd308cc059"}
+```
 
 To remove a port:
 
+``` bash
     remove: {"server_port": 8001}
-    
+```
+
 echo:
-    
+
+``` bash
     echo -n ping > /dev/udp/127.0.0.1/6001
+```
 
 demo:
 
+``` bash
     ssserver -p 8888 -k password -m aes-256-cfb --manager-address 127.0.0.1:6001
+```
