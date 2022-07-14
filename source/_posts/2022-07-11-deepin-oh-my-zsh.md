@@ -1,5 +1,5 @@
 ---
-title: deepin-oh-my-zsh
+title: Deepin 安装oh-my-zsh
 categories:
   - Note
 tags:
