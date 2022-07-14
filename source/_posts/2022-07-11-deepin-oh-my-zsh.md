@@ -75,6 +75,10 @@ sudo apt install fonts-firacode
 
 之后可以顺带修改VSCode的字体，重启`zsh`即可。
 
+最后bash的效果：
+
+![截图_deepin-terminal_20220715010232.png](https://s2.loli.net/2022/07/15/w2rYmWisoavKD74.png)
+
 ## 可能遇到的问题
 
 安装后我遇到了`nvm`，`npm`的`Command Not Found`的错误。
