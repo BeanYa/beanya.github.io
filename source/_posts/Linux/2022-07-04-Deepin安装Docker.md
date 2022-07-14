@@ -114,7 +114,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     手动添加到/etc/apt/sources.list
 
-    ![换源图](https://img2020.cnblogs.com/blog/2065380/202011/2065380-20201125003339649-262684308.png)
+    ![截图_选择区域_20220715010410.png](https://s2.loli.net/2022/07/15/nTlZitMeubdSNRw.png)
 
     >图挂了去cnblog原址看
 
