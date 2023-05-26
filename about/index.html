@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="Beans Blog">
 <meta property="og:description" content="Who I am ?BeanWhat I want to be ?A ProgrammerWhat this site For?Recording something">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2023-05-25T22:13:21.632Z">
+<meta property="og:updated_time" content="2023-05-26T22:12:57.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About Me">
 <meta name="twitter:description" content="Who I am ?BeanWhat I want to be ?A ProgrammerWhat this site For?Recording something">
@@ -1500,5 +1500,20 @@
         
         <!-- mermaid -->
         
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

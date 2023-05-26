@@ -444,7 +444,7 @@ Ubuntu/Deepin下wget -O install.sh http://download.bt.cn/install/install-ubuntu.
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/05/25">
+                <div class="abstract-date" title="Last updated: 2023/05/26">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
                 </div>
                 <!-- tags -->
@@ -1529,5 +1529,20 @@ Ubuntu/Deepin下wget -O install.sh http://download.bt.cn/install/install-ubuntu.
         
         <!-- mermaid -->
         
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
