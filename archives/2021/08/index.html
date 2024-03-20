@@ -451,7 +451,7 @@ ssh-rsa …………….
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/03/19">
+                <div class="abstract-date" title="Last updated: 2024/03/20">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/24</span>
                 </div>
                 <!-- tags -->
@@ -900,8 +900,6 @@ ssh-rsa …………….
         
         
         
-        
-        
     
     
     
@@ -1081,12 +1079,6 @@ ssh-rsa …………….
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span>
-            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-数学期望/">数学期望</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span>
             <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-关系运算/">关系运算</a>
         </li>
     
@@ -1094,6 +1086,12 @@ ssh-rsa …………….
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span>
             <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-贝叶斯公式/">贝叶斯公式</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-数学期望/">数学期望</a>
         </li>
     
         
@@ -1166,14 +1164,14 @@ ssh-rsa …………….
                 Sort
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Tree">
-                <span class="iconfont-archer">&#xe606;</span>
-                Tree
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="Python">
                 <span class="iconfont-archer">&#xe606;</span>
                 Python
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Tree">
+                <span class="iconfont-archer">&#xe606;</span>
+                Tree
             </span>
         
             <span class="sidebar-tag-name" data-tags="Summary">
@@ -1271,11 +1269,6 @@ ssh-rsa …………….
                 Probability Theory
             </span>
         
-            <span class="sidebar-tag-name" data-tags="数学期望">
-                <span class="iconfont-archer">&#xe606;</span>
-                数学期望
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="关系运算">
                 <span class="iconfont-archer">&#xe606;</span>
                 关系运算
@@ -1286,14 +1279,14 @@ ssh-rsa …………….
                 贝叶斯公式
             </span>
         
+            <span class="sidebar-tag-name" data-tags="数学期望">
+                <span class="iconfont-archer">&#xe606;</span>
+                数学期望
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="Binary">
                 <span class="iconfont-archer">&#xe606;</span>
                 Binary
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Network">
-                <span class="iconfont-archer">&#xe606;</span>
-                Network
             </span>
         
             <span class="sidebar-tag-name" data-tags="Picture">
@@ -1381,19 +1374,9 @@ ssh-rsa …………….
                 剪辑
             </span>
         
-            <span class="sidebar-tag-name" data-tags="C#">
+            <span class="sidebar-tag-name" data-tags="Network">
                 <span class="iconfont-archer">&#xe606;</span>
-                C#
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Code">
-                <span class="iconfont-archer">&#xe606;</span>
-                Code
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Sample">
-                <span class="iconfont-archer">&#xe606;</span>
-                Sample
+                Network
             </span>
         
             <span class="sidebar-tag-name" data-tags="Math">
@@ -1409,6 +1392,21 @@ ssh-rsa …………….
             <span class="sidebar-tag-name" data-tags="GameLogic">
                 <span class="iconfont-archer">&#xe606;</span>
                 GameLogic
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="C#">
+                <span class="iconfont-archer">&#xe606;</span>
+                C#
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Code">
+                <span class="iconfont-archer">&#xe606;</span>
+                Code
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Sample">
+                <span class="iconfont-archer">&#xe606;</span>
+                Sample
             </span>
         
     </div>
@@ -1437,14 +1435,14 @@ ssh-rsa …………….
             Algorithm
         </span>
     
-        <span class="sidebar-category-name" data-categories="Datastruct">
-            <span class="iconfont-archer">&#xe60a;</span>
-            Datastruct
-        </span>
-    
         <span class="sidebar-category-name" data-categories="Python">
             <span class="iconfont-archer">&#xe60a;</span>
             Python
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="Datastruct">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Datastruct
         </span>
     
         <span class="sidebar-category-name" data-categories="Summary">
@@ -1530,5 +1528,20 @@ ssh-rsa …………….
         
         <!-- mermaid -->
         
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
