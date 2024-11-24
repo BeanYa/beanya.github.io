@@ -497,7 +497,7 @@ Vegas
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/11/23">
+                <div class="abstract-date" title="Last updated: 2024/11/24">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/12</span>
                 </div>
                 <!-- tags -->
@@ -980,8 +980,6 @@ Vegas
         
         
         
-        
-        
     
     
     
@@ -1167,13 +1165,13 @@ Vegas
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span>
-            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-贝叶斯公式/">贝叶斯公式</a>
+            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-数学期望/">数学期望</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span>
-            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-数学期望/">数学期望</a>
+            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-贝叶斯公式/">贝叶斯公式</a>
         </li>
     
         
@@ -1206,21 +1204,6 @@ Vegas
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="Pipeline">
-                <span class="iconfont-archer">&#xe606;</span>
-                Pipeline
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Shader">
-                <span class="iconfont-archer">&#xe606;</span>
-                Shader
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Graphic">
-                <span class="iconfont-archer">&#xe606;</span>
-                Graphic
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="Interview">
                 <span class="iconfont-archer">&#xe606;</span>
                 Interview
@@ -1234,6 +1217,21 @@ Vegas
             <span class="sidebar-tag-name" data-tags="Note">
                 <span class="iconfont-archer">&#xe606;</span>
                 Note
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Pipeline">
+                <span class="iconfont-archer">&#xe606;</span>
+                Pipeline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Shader">
+                <span class="iconfont-archer">&#xe606;</span>
+                Shader
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Graphic">
+                <span class="iconfont-archer">&#xe606;</span>
+                Graphic
             </span>
         
             <span class="sidebar-tag-name" data-tags="Tree">
@@ -1356,19 +1354,14 @@ Vegas
                 关系运算
             </span>
         
-            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
+            <span class="sidebar-tag-name" data-tags="数学期望">
                 <span class="iconfont-archer">&#xe606;</span>
-                贝叶斯公式
+                数学期望
             </span>
         
             <span class="sidebar-tag-name" data-tags="Binary">
                 <span class="iconfont-archer">&#xe606;</span>
                 Binary
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="数学期望">
-                <span class="iconfont-archer">&#xe606;</span>
-                数学期望
             </span>
         
             <span class="sidebar-tag-name" data-tags="Picture">
@@ -1384,6 +1377,16 @@ Vegas
             <span class="sidebar-tag-name" data-tags="Website">
                 <span class="iconfont-archer">&#xe606;</span>
                 Website
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Network">
+                <span class="iconfont-archer">&#xe606;</span>
+                Network
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
+                <span class="iconfont-archer">&#xe606;</span>
+                贝叶斯公式
             </span>
         
             <span class="sidebar-tag-name" data-tags="文件传输">
@@ -1471,11 +1474,6 @@ Vegas
                 GameLogic
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Network">
-                <span class="iconfont-archer">&#xe606;</span>
-                Network
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="C#">
                 <span class="iconfont-archer">&#xe606;</span>
                 C#
@@ -1502,14 +1500,14 @@ Vegas
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Unity">
-            <span class="iconfont-archer">&#xe60a;</span>
-            Unity
-        </span>
-    
         <span class="sidebar-category-name" data-categories="Note">
             <span class="iconfont-archer">&#xe60a;</span>
             Note
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="Unity">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Unity
         </span>
     
         <span class="sidebar-category-name" data-categories="Datastruct">
@@ -1610,5 +1608,20 @@ Vegas
         
         <!-- mermaid -->
         
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
