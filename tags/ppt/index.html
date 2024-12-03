@@ -497,7 +497,7 @@ Vegas
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/12/02">
+                <div class="abstract-date" title="Last updated: 2024/12/03">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/12</span>
                 </div>
                 <!-- tags -->
@@ -1246,14 +1246,14 @@ Vegas
                 Algorithm
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Python">
-                <span class="iconfont-archer">&#xe606;</span>
-                Python
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="Sort">
                 <span class="iconfont-archer">&#xe606;</span>
                 Sort
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
             </span>
         
             <span class="sidebar-tag-name" data-tags="Summary">
@@ -1361,11 +1361,6 @@ Vegas
                 数学期望
             </span>
         
-            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
-                <span class="iconfont-archer">&#xe606;</span>
-                贝叶斯公式
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="Binary">
                 <span class="iconfont-archer">&#xe606;</span>
                 Binary
@@ -1384,6 +1379,11 @@ Vegas
             <span class="sidebar-tag-name" data-tags="Website">
                 <span class="iconfont-archer">&#xe606;</span>
                 Website
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
+                <span class="iconfont-archer">&#xe606;</span>
+                贝叶斯公式
             </span>
         
             <span class="sidebar-tag-name" data-tags="Network">
@@ -1517,14 +1517,14 @@ Vegas
             Datastruct
         </span>
     
-        <span class="sidebar-category-name" data-categories="Python">
-            <span class="iconfont-archer">&#xe60a;</span>
-            Python
-        </span>
-    
         <span class="sidebar-category-name" data-categories="Algorithm">
             <span class="iconfont-archer">&#xe60a;</span>
             Algorithm
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="Python">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Python
         </span>
     
         <span class="sidebar-category-name" data-categories="Summary">
@@ -1610,5 +1610,20 @@ Vegas
         
         <!-- mermaid -->
         
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

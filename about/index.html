@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="Beans Blog">
 <meta property="og:description" content="Who I am ?BeanWhat I want to be ?A ProgrammerWhat this site For?Recording something">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2024-12-02T22:04:56.351Z">
+<meta property="og:updated_time" content="2024-12-03T22:05:00.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About Me">
 <meta name="twitter:description" content="Who I am ?BeanWhat I want to be ?A ProgrammerWhat this site For?Recording something">
@@ -1136,14 +1136,14 @@
                 Algorithm
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Python">
-                <span class="iconfont-archer">&#xe606;</span>
-                Python
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="Sort">
                 <span class="iconfont-archer">&#xe606;</span>
                 Sort
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
             </span>
         
             <span class="sidebar-tag-name" data-tags="Summary">
@@ -1251,11 +1251,6 @@
                 数学期望
             </span>
         
-            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
-                <span class="iconfont-archer">&#xe606;</span>
-                贝叶斯公式
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="Binary">
                 <span class="iconfont-archer">&#xe606;</span>
                 Binary
@@ -1274,6 +1269,11 @@
             <span class="sidebar-tag-name" data-tags="Website">
                 <span class="iconfont-archer">&#xe606;</span>
                 Website
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
+                <span class="iconfont-archer">&#xe606;</span>
+                贝叶斯公式
             </span>
         
             <span class="sidebar-tag-name" data-tags="Network">
@@ -1407,14 +1407,14 @@
             Datastruct
         </span>
     
-        <span class="sidebar-category-name" data-categories="Python">
-            <span class="iconfont-archer">&#xe60a;</span>
-            Python
-        </span>
-    
         <span class="sidebar-category-name" data-categories="Algorithm">
             <span class="iconfont-archer">&#xe60a;</span>
             Algorithm
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="Python">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Python
         </span>
     
         <span class="sidebar-category-name" data-categories="Summary">
@@ -1500,5 +1500,20 @@
         
         <!-- mermaid -->
         
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
