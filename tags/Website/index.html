@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Bean">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Bean">
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Beans Blog">
+<meta property="og:url" content="http://bean.ink/tags/Website/index.html">
+<meta property="og:site_name" content="Beans Blog">
+<meta property="og:locale">
+<meta property="article:author" content="Bean">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/bean.ico">
+    <title>Bean&#39;s Studio</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Beans Blog" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Bean's Studio</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">Bean&#39;s Studio</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"></a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="">
+    <!-- 主页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+        </p>
+        <!-- 文章页 meta -->
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main index-page">
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/12/Note-2023-04-12-%E4%B8%80%E4%BA%9B%E7%BD%91%E5%9D%80/">
+                <span class="abstract-title-text">一些网站收藏</span>
+            </a>
+            <div class="abstract-content">
+                From Weibo 班叔
+思维导图
+
+XMind
+幕布
+ProcessOn
+知犀
+
+问卷调查
+
+问卷星
+麦客
+调查派
+
+H5 工具
+
+易企秀
+iH5
+MAKA
+人人秀
+
+图文排版
+
+i 排版
+135 编辑器
+秀米
+
+在线作图
+
+创客贴
+稿定设计
+Canva
+图怪兽
+
+词云生成
+
+易词云
+图悦
+WordArt
+
+免费图库
+
+Pexels
+Unsplash
+Pixabay
+
+PPT 模板
+
+优品 PPT
+51PPT
+变色龙
+
+手机剪辑
+
+剪映
+必剪
+爱剪辑
+
+专业剪辑
+
+Premiere
+Final Cut Pro
+Vegas
+
+视频格式转换
+
+格式工厂
+迅捷视频转换器
+
+分离人声伴奏
+
+...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/02/24">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/12</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="Picture">Picture</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="API">API</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Website">Website</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="文件传输">文件传输</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="图文制作">图文制作</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="gif">gif</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="pdf">pdf</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="人声分离">人声分离</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="ppt">ppt</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="software">software</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="思维导图">思维导图</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="mindmap">mindmap</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="问卷调查">问卷调查</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="h5">h5</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="排版">排版</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="作图">作图</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="剪辑">剪辑</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/10/29/Note-2018-10-29-%E8%8E%B7%E5%8F%96%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E7%9A%84%E7%BD%91%E7%AB%99/">
+                <span class="abstract-title-text">获取随机图片的网站</span>
+            </a>
+            <div class="abstract-content">
+                目的
+随机获取一定大小的高清图片
+Unsplash
+母站：https://unsplash.com/
+获取图片API
+正常的http请求即可，非RESTful
+源页：https://source.unsplash.com/
+API
+https://source.unsplash.com/random
+带参API
+( 可能经过裁剪 )
+https://source.unsplash.com/random/1920x1080
+示例
+刷新本页可以看到不同的图片
+
+
+随机图片
+
+注意
+由于是境外的源，国内的访问速度可能不太理想。
+没有找到国内比较好的替代站。
+
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/02/24">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/29</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="Picture">Picture</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="API">API</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Website">Website</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    <!-- paginator  -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:isbean@qq.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/beanya" class="iconfont-archer github" target="_blank" title="github"></a>
+                <span class="iconfont-archer wechat" title="wechat">
+                    <img class="profile-qr" src="/assets/WCQR.jpg" />
+                </span>
+                <span class="iconfont-archer qq" title="qq">
+                    <img class="profile-qr" src="/assets/QQQR.jpg" />
+                </span>
+                <a href="//t.me/whoisbean" class="iconfont-archer telegram" target="_blank" title="telegram"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 27
+        </div>
+        <!-- search  -->
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2023/04/12/Note-2023-04-12-%E4%B8%80%E4%BA%9B%E7%BD%91%E5%9D%80/">一些网站收藏</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span>
+            <a class="archive-post-title" href="/2022/07/11/deepin-oh-my-zsh/">Deepin 安装oh-my-zsh</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span>
+            <a class="archive-post-title" href="/2022/07/04/Linux-2022-07-04-Deepin%E5%AE%89%E8%A3%85Docker/">Deepin安装Docker</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/Github-SSHKey%E7%9B%B8%E5%85%B3/">Github-SSHKey相关</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span>
+            <a class="archive-post-title" href="/2021/02/13/BlogBuilding-2021-02-13-GHAction-DeployHexo/">用GitHub Action部署Hexo</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2019 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span>
+            <a class="archive-post-title" href="/2019/02/10/Linux-2019-02-10-Centos%E4%B8%8B%E9%98%B2%E7%81%AB%E5%A2%99-ss%E5%A4%9A%E7%AB%AF%E5%8F%A3%E8%84%9A%E6%9C%AC/">Centos下防火墙+ss多端口脚本</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span>
+            <a class="archive-post-title" href="/2019/02/10/Linux-2019-02-10-%E6%9F%A5%E8%AF%A2%E6%9C%AC%E6%9C%BAIP/">查询本机IP</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span>
+            <a class="archive-post-title" href="/2019/02/06/BlogBuilding-2019-02-06-Travis-Hexo%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2/">Travis+Hexo自动推送博客</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2018 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span>
+            <a class="archive-post-title" href="/2018/11/02/Math-2018-11-02-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9B%B8%E5%85%B3/">Binary</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/Note-2018-11-01-Computer-Network/">Network</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/2018/10/31/Markdown-2018-10-31-Markdown-Latex%E4%B9%A6%E5%86%99%E5%85%AC%E5%BC%8F/">Markdown+Latex书写公式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span>
+            <a class="archive-post-title" href="/2018/10/30/Markdown-2018-10-30-Markdown%E8%AF%AD%E6%B3%95/">Markdown语法</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span>
+            <a class="archive-post-title" href="/2018/10/30/Markdown-2018-10-30-VideoInMarkdown-Demo/">VideoInMarkdown-Demo</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Algorithm-2018-10-29-Marching-Square/">Marching Square</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-NextCloud%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98%E5%AE%89%E8%A3%85/">NextCloud个人网盘安装</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-VPS/">VPS</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-VPS%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/">VPS安全防护</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Linux-2018-10-29-WordPress%E5%AE%89%E8%A3%85/">WordPress安装</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Unity-2018-10-29-Unity2D%E4%B8%AD%E7%AE%80%E5%8D%95%E7%9A%84%E7%9B%B8%E6%9C%BA%E8%B7%9F%E9%9A%8F/">Unity2D中简单的相机跟随</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2018/10/29/Note-2018-10-29-%E8%8E%B7%E5%8F%96%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E7%9A%84%E7%BD%91%E7%AB%99/">获取随机图片的网站</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97/">关系运算</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/">数学期望</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Math-2018-10-27-%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/">贝叶斯公式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Unity-2018-10-27-Quaternion%E5%9B%9B%E5%85%83%E6%95%B0/">Quaternion四元数</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Linux-2018-10-27-Shadowsocks/">Shadowsocks</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2018/10/27/Linux-2018-10-27-VPS%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/">VPS安装宝塔面板</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/2018/10/26/Math-2018-10-26-%E6%B3%8A%E6%9D%BE%E8%BF%87%E7%A8%8B/">泊松过程</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="Note">
+                <span class="iconfont-archer">&#xe606;</span>
+                Note
+            </span>
+            <span class="sidebar-tag-name" data-tags="BlogBuilding">
+                <span class="iconfont-archer">&#xe606;</span>
+                BlogBuilding
+            </span>
+            <span class="sidebar-tag-name" data-tags="VPS">
+                <span class="iconfont-archer">&#xe606;</span>
+                VPS
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="Shadowsocks">
+                <span class="iconfont-archer">&#xe606;</span>
+                Shadowsocks
+            </span>
+            <span class="sidebar-tag-name" data-tags="Proxy">
+                <span class="iconfont-archer">&#xe606;</span>
+                Proxy
+            </span>
+            <span class="sidebar-tag-name" data-tags="宝塔面板">
+                <span class="iconfont-archer">&#xe606;</span>
+                宝塔面板
+            </span>
+            <span class="sidebar-tag-name" data-tags="Software">
+                <span class="iconfont-archer">&#xe606;</span>
+                Software
+            </span>
+            <span class="sidebar-tag-name" data-tags="Web">
+                <span class="iconfont-archer">&#xe606;</span>
+                Web
+            </span>
+            <span class="sidebar-tag-name" data-tags="Blog">
+                <span class="iconfont-archer">&#xe606;</span>
+                Blog
+            </span>
+            <span class="sidebar-tag-name" data-tags="Nextcloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                Nextcloud
+            </span>
+            <span class="sidebar-tag-name" data-tags="Introduction">
+                <span class="iconfont-archer">&#xe606;</span>
+                Introduction
+            </span>
+            <span class="sidebar-tag-name" data-tags="Security">
+                <span class="iconfont-archer">&#xe606;</span>
+                Security
+            </span>
+            <span class="sidebar-tag-name" data-tags="Wordpress">
+                <span class="iconfont-archer">&#xe606;</span>
+                Wordpress
+            </span>
+            <span class="sidebar-tag-name" data-tags="Markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                Markdown
+            </span>
+            <span class="sidebar-tag-name" data-tags="Demo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Demo
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="Poisson process">
+                <span class="iconfont-archer">&#xe606;</span>
+                Poisson process
+            </span>
+            <span class="sidebar-tag-name" data-tags="Probability Theory">
+                <span class="iconfont-archer">&#xe606;</span>
+                Probability Theory
+            </span>
+            <span class="sidebar-tag-name" data-tags="关系运算">
+                <span class="iconfont-archer">&#xe606;</span>
+                关系运算
+            </span>
+            <span class="sidebar-tag-name" data-tags="数学期望">
+                <span class="iconfont-archer">&#xe606;</span>
+                数学期望
+            </span>
+            <span class="sidebar-tag-name" data-tags="贝叶斯公式">
+                <span class="iconfont-archer">&#xe606;</span>
+                贝叶斯公式
+            </span>
+            <span class="sidebar-tag-name" data-tags="Binary">
+                <span class="iconfont-archer">&#xe606;</span>
+                Binary
+            </span>
+            <span class="sidebar-tag-name" data-tags="Network">
+                <span class="iconfont-archer">&#xe606;</span>
+                Network
+            </span>
+            <span class="sidebar-tag-name" data-tags="Picture">
+                <span class="iconfont-archer">&#xe606;</span>
+                Picture
+            </span>
+            <span class="sidebar-tag-name" data-tags="API">
+                <span class="iconfont-archer">&#xe606;</span>
+                API
+            </span>
+            <span class="sidebar-tag-name" data-tags="Website">
+                <span class="iconfont-archer">&#xe606;</span>
+                Website
+            </span>
+            <span class="sidebar-tag-name" data-tags="文件传输">
+                <span class="iconfont-archer">&#xe606;</span>
+                文件传输
+            </span>
+            <span class="sidebar-tag-name" data-tags="图文制作">
+                <span class="iconfont-archer">&#xe606;</span>
+                图文制作
+            </span>
+            <span class="sidebar-tag-name" data-tags="gif">
+                <span class="iconfont-archer">&#xe606;</span>
+                gif
+            </span>
+            <span class="sidebar-tag-name" data-tags="pdf">
+                <span class="iconfont-archer">&#xe606;</span>
+                pdf
+            </span>
+            <span class="sidebar-tag-name" data-tags="人声分离">
+                <span class="iconfont-archer">&#xe606;</span>
+                人声分离
+            </span>
+            <span class="sidebar-tag-name" data-tags="ppt">
+                <span class="iconfont-archer">&#xe606;</span>
+                ppt
+            </span>
+            <span class="sidebar-tag-name" data-tags="software">
+                <span class="iconfont-archer">&#xe606;</span>
+                software
+            </span>
+            <span class="sidebar-tag-name" data-tags="思维导图">
+                <span class="iconfont-archer">&#xe606;</span>
+                思维导图
+            </span>
+            <span class="sidebar-tag-name" data-tags="mindmap">
+                <span class="iconfont-archer">&#xe606;</span>
+                mindmap
+            </span>
+            <span class="sidebar-tag-name" data-tags="问卷调查">
+                <span class="iconfont-archer">&#xe606;</span>
+                问卷调查
+            </span>
+            <span class="sidebar-tag-name" data-tags="h5">
+                <span class="iconfont-archer">&#xe606;</span>
+                h5
+            </span>
+            <span class="sidebar-tag-name" data-tags="排版">
+                <span class="iconfont-archer">&#xe606;</span>
+                排版
+            </span>
+            <span class="sidebar-tag-name" data-tags="作图">
+                <span class="iconfont-archer">&#xe606;</span>
+                作图
+            </span>
+            <span class="sidebar-tag-name" data-tags="剪辑">
+                <span class="iconfont-archer">&#xe606;</span>
+                剪辑
+            </span>
+            <span class="sidebar-tag-name" data-tags="Math">
+                <span class="iconfont-archer">&#xe606;</span>
+                Math
+            </span>
+            <span class="sidebar-tag-name" data-tags="Unity">
+                <span class="iconfont-archer">&#xe606;</span>
+                Unity
+            </span>
+            <span class="sidebar-tag-name" data-tags="GameLogic">
+                <span class="iconfont-archer">&#xe606;</span>
+                GameLogic
+            </span>
+            <span class="sidebar-tag-name" data-tags="C#">
+                <span class="iconfont-archer">&#xe606;</span>
+                C#
+            </span>
+            <span class="sidebar-tag-name" data-tags="Code">
+                <span class="iconfont-archer">&#xe606;</span>
+                Code
+            </span>
+            <span class="sidebar-tag-name" data-tags="Sample">
+                <span class="iconfont-archer">&#xe606;</span>
+                Sample
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="Note">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Note
+        </span>
+        <span class="sidebar-category-name" data-categories="Proxy">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Proxy
+        </span>
+        <span class="sidebar-category-name" data-categories="Linux">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Linux
+        </span>
+        <span class="sidebar-category-name" data-categories="VPS">
+            <span class="iconfont-archer">&#xe60a;</span>
+            VPS
+        </span>
+        <span class="sidebar-category-name" data-categories="Markdown">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Markdown
+        </span>
+        <span class="sidebar-category-name" data-categories="Math">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Math
+        </span>
+        <span class="sidebar-category-name" data-categories="Network">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Network
+        </span>
+        <span class="sidebar-category-name" data-categories="Unity">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Unity
+        </span>
+        <span class="sidebar-category-name" data-categories="Code">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Code
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://bean.ink",
+        root: siteMetaRoot,
+        author: "Bean"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+        <!-- mermaid -->
+    </body>
+</html>
