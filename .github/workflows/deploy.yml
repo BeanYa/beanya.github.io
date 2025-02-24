@@ -13,14 +13,16 @@ on:
 jobs:
   pages:
     runs-on: ubuntu-latest
-    container:
-      image: pandoc/latex:3.6.3
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 23.7
         uses: actions/setup-node@v1
         with:
           node-version: '23.7'
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
       - name: Fetch
         run: git fetch --all
       - name: Checkout
