@@ -28,6 +28,7 @@
     margin: 0 0.2rem;
     border: none;
     transition: $transition-animation;
+    word-break: break-all;
   }
   pre code {
     background: none;
@@ -189,7 +190,11 @@
   .gist .gist-file .gist-meta {
     background: #272822;
     color: highlight-comment;
-    font: 0.85em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font:
+      0.85em 'Helvetica Neue',
+      Helvetica,
+      Arial,
+      sans-serif;
     text-shadow: 0 0;
     padding: 0;
     margin-top: 1em;

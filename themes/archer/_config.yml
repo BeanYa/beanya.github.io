@@ -1,8 +1,8 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/avatar.jpg
+avatar: /avatar/ava.jpg
 # author name
-author: bean
+author: Bean
 # signature
 signature: A true master is an eternal student.
 # SNS (you can custom the order)
@@ -35,7 +35,7 @@ friends:
   # friendB: //www.google.com
 about:
   enable: true
-  image: 'https://source.unsplash.com/random/2560x863'
+  image: https://api.1314.cool/bingimg
 # Search for website
 search:
   enable: false
@@ -69,15 +69,15 @@ SEO_keywords:
   - 'hexo-theme'
   - 'hexo-blog'
 # main title shown in header image
-main_title: Bean's Studio.
+main_title: Bean's Studio
 # subtitle
 subtitle: The world is not black or white, but a delicious shade of grey.
 # site haeder image
-site_header_image: 'https://source.unsplash.com/random/2560x863'
+site_header_image: https://api.1314.cool/bingimg
 # post haeder image
-post_header_image: 'https://source.unsplash.com/random/2560x863'
+post_header_image: https://api.1314.cool/bingimg
 # 404 image
-_404_image: '/intro/404-bg.jpg'
+_404_image: https://api.1314.cool/bingimg
 
 # ========== Theme ========== #
 # Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
@@ -87,7 +87,7 @@ read_more_button: false
 # Enable toc
 toc: true
 # Word count & Reading time
-reading_info: true
+reading_info: false
 # Intro height (the default is 50 percents of the screen, you can input other number)
 index_intro_height: 50
 post_intro_height: 50
@@ -116,6 +116,17 @@ algolia_search:
     hits_empty: "We did not find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
 
+# ========== Donate ========== #
+donate:
+  enable: false
+  title: Buy Me A Coffee
+  description: If this post helped you, please consider buying the author a cup of sugar-free coffee ☕️.
+  qr_code:
+    - url: /assets/donate-wechat.png
+      alt: Wechat
+    - url: /assets/donate-alipay.png
+      alt: Alipay
+
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"
@@ -136,9 +147,11 @@ comment:
   valine_appKey: 
   valine_placeHolder: 
   # Waline  site: https://waline.js.org/
+  # https://waline.js.org/reference/client/props.html#serverurl
   waline_serverURL: 
+  # https://waline.js.org/cookbook/customize/locale.html locale.placeholder
   waline_placeHolder: 
-  waline_avatar: 
+  # https://waline.js.org/reference/client/props.html#login
   waline_login: 
   # gitalk site: https://github.com/gitalk/gitalk/
   # Value 'true' is recommended for gitalk_pathname_id setting
@@ -192,7 +205,7 @@ outdated_threshold:
   specify_article: false
 # Mermaid Chart: https://github.com/knsv/mermaid
 mermaid:
-  enable: true
+  enable: false
   # Version number '8' is for the latest '8.x' version of Mermaid.
   version: 8.11.0
   theme: dark
@@ -219,8 +232,3 @@ custom_font:
   name: 'Noto Sans SC:n3,n4,n5,n7'
   # Font CDN url
   url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
-
-# ========== Theme Dev ========== #
-# Ensure visitor to get the latest version of source.
-# Set a higher value before creating new release.
-source_version: 20211217

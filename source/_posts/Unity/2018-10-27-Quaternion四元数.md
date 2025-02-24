@@ -3,6 +3,7 @@ title: Quaternion四元数
 date: 2018-10-27 13:44:46
 categories:
 - Unity
+mathjax: true
 tags:
 - Math
 - Unity
@@ -18,7 +19,6 @@ tags:
 Quaternion 的基本数学方程为 :
 $$
 Q=\cos\frac{angle}{2}+i(x \times \sin \frac{a}{2})+j(y \times \sin \frac{a}{2})+k(z \times \sin \frac{a}{2}) \qquad(a 为旋转角度)\\
-\\
 Q : Quaternion;\\
 Q.w = \cos \frac{angle}{2}\\
 Q.x = axis.x \times \sin \frac{angle}{2}\\
