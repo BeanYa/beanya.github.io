@@ -3,135 +3,135 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Beans Blog
-subtitle: ''
-description: ''
-keywords:
-author: Bean
-language: 
-timezone: 
+title: Beans Blog  # 网站标题，显示在浏览器标签页和网站头部
+subtitle: ''  # 网站副标题，显示在标题下方
+description: ''  # 网站描述，用于SEO和社交媒体分享
+keywords:  # 网站关键词，用于SEO优化
+author: Bean  # 网站作者名称
+language:   # 网站语言代码（如：zh-CN, en）
+timezone:   # 网站时区（如：Asia/Shanghai）
 
-reading_info: true
+reading_info: true  # 是否显示阅读信息（阅读时间等，主题特定配置）
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://bean.ink
-permalink: :year/:month/:day/:title/
-permalink_defaults:
-pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+url: http://bean.ink  # 网站根URL地址
+permalink: :year/:month/:day/:title/  # 文章永久链接格式，:year/:month/:day/:title/ 表示年/月/日/标题/
+permalink_defaults:  # 永久链接的默认参数值
+pretty_urls:  # URL美化配置
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks  # 是否在URL末尾保留 index.html
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks  # 是否在URL末尾保留 .html 扩展名
 
 # Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+source_dir: source  # 源文件目录，存放Markdown源文件
+public_dir: public  # 公共文件目录，Hexo生成的静态文件存放位置
+tag_dir: tags  # 标签页目录名称
+archive_dir: archives  # 归档页目录名称
+category_dir: categories  # 分类页目录名称
+code_dir: downloads/code  # 代码下载目录
+i18n_dir: :lang  # 国际化文件目录，:lang 表示语言代码
+skip_render:  # 跳过渲染的文件或目录列表
 
 # Writing
-new_post_name: :year-:month-:day-:title # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
+new_post_name: :year-:month-:day-:title # File name of new posts  # 新建文章的文件名格式
+default_layout: post  # 默认布局类型（post/page/draft）
+titlecase: false # Transform title into titlecase  # 是否将标题转换为首字母大写格式
 external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
-  exclude: ''
-filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
-future: true
-syntax_highlighter: highlight.js
-highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
-prismjs:
-  preprocess: true
-  line_number: true
-  tab_replace: ''
+  enable: true # Open external links in new tab  # 是否在新标签页打开外部链接
+  field: site # Apply to the whole site  # 应用范围：site（全站）/post（仅文章）
+  exclude: ''  # 排除的域名列表，这些域名的链接不会在新标签页打开
+filename_case: 0  # 文件名大小写：0=保持原样，1=小写，2=大写
+render_drafts: false  # 是否渲染草稿文件
+post_asset_folder: false  # 是否为每篇文章创建独立的资源文件夹
+relative_link: false  # 是否使用相对链接
+future: true  # 是否显示未来日期的文章
+syntax_highlighter: highlight.js  # 代码高亮引擎：highlight.js 或 prismjs
+highlight:  # highlight.js 配置选项
+  line_number: true  # 是否显示行号
+  auto_detect: false  # 是否自动检测代码语言
+  tab_replace: ''  # 替换制表符的字符串
+  wrap: true  # 是否换行
+  hljs: false  # 是否使用 hljs 类
+prismjs:  # prismjs 配置选项
+  preprocess: true  # 是否预处理代码
+  line_number: true  # 是否显示行号
+  tab_replace: ''  # 替换制表符的字符串
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
+index_generator:  # 首页生成器配置
+  path: ''  # 首页路径，默认为空（根路径）
+  per_page: 10  # 每页显示的文章数量，0表示禁用分页
+  order_by: -date  # 文章排序方式，-date 表示按日期降序（最新的在前）
 
 # Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+default_category: uncategorized  # 默认分类名称，未分类的文章使用此分类
+category_map:  # 分类名称映射，用于重命名分类
+tag_map:  # 标签名称映射，用于重命名标签
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-meta_generator: true
+meta_generator: true  # 是否在HTML中生成meta generator标签
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+date_format: YYYY-MM-DD  # 日期显示格式
+time_format: HH:mm:ss  # 时间显示格式
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: 'mtime'  # 更新时间的来源：mtime（文件修改时间）/date（文章日期）/empty（不显示）
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 10
-pagination_dir: page
+per_page: 10  # 分页时每页显示的文章数量
+pagination_dir: page  # 分页目录名称，URL中分页路径的前缀
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+include:  # 包含的文件或目录，即使被忽略也会被处理
+exclude:  # 排除的文件或目录，不会被处理
+ignore:  # 忽略的文件或目录，不会被复制到public目录
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: archer
+theme: archer  # 使用的主题名称
 
-jsonContent:
-  meta: true
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: true
-    excerpt: false
-    categories: true
-    tags: true
+jsonContent:  # JSON内容生成配置，用于搜索等功能
+  meta: true  # 是否生成元数据
+  pages: false  # 是否包含页面
+  posts:  # 文章内容配置
+    title: true  # 是否包含标题
+    date: true  # 是否包含日期
+    path: true  # 是否包含路径
+    text: false  # 是否包含文本内容
+    raw: false  # 是否包含原始内容
+    content: false  # 是否包含完整内容
+    slug: false  # 是否包含slug
+    updated: false  # 是否包含更新时间
+    comments: false  # 是否包含评论信息
+    link: false  # 是否包含链接
+    permalink: true  # 是否包含永久链接
+    excerpt: false  # 是否包含摘要
+    categories: true  # 是否包含分类
+    tags: true  # 是否包含标签
 
-mermaid:
-  enable: true
-  version: 8.11.0
-  theme: dark
+mermaid:  # Mermaid图表配置
+  enable: true  # 是否启用Mermaid图表支持
+  version: 8.11.0  # Mermaid版本号
+  theme: dark  # Mermaid主题：dark/light/default
 
-math:
-  mathjax:
-    enable: true
-    version: 3.2.0
+math:  # 数学公式配置
+  mathjax:  # MathJax配置
+    enable: true  # 是否启用MathJax数学公式渲染
+    version: 3.2.0  # MathJax版本号
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/BeanYa/beanya.github.io.git
-  branch: master
+deploy:  # 部署配置
+  type: git  # 部署类型：git
+  repo: https://github.com/BeanYa/beanya.github.io.git  # Git仓库地址
+  branch: master  # 部署到的分支名称
