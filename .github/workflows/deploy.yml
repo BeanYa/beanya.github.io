@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '23.7'
-      - uses: docker://pandoc/3.6.3
+      - uses: docker://pandoc/latex:3.6.3
       - name: Fetch
         run: git fetch --all
       - name: Checkout
