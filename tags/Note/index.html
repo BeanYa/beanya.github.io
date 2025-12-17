@@ -408,7 +408,7 @@
 不说了，就是很帅的terminal，由zsh而来
 安装
 先安装zsh
-1234567891011121314151617# 切换到rootsu# 先安装zshapt-get -y install zsh# 看看已经安装的shellcat /etc/shells# 切换到zshchsh -s /bin/zsh# reboot，不重启可能看不到zshreboot# 查看当前Shellecho $SHELL
+12345678910111213141516171819202122232425# 切换到rootsu# 先安装zshapt-get -y install zsh# 看看已经安装的shellcat /etc/shells# 切换到zshchsh -s /bin/zsh# reboot，不重启可能看不到zshreboot# 查看当前Shellecho $SHELL
 再安装oh-my-zsh
 官方Repo
 README提供了3个下载方式
@@ -426,12 +426,12 @@ Command
 
 
 curl
-sh -c "$(curl -fs...
+s...
             </div>
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/07/11</span>
                 </div>
                 <!-- tags -->
@@ -462,7 +462,7 @@ $(lsb_release -cs) 获取到的版本信息为 unstable，而 docker ...
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/07/04</span>
                 </div>
                 <!-- tags -->
@@ -484,21 +484,20 @@ Github 上如果想用 git@github.com
 的ssh方式，需要在GitHub的Setting里配上客户机的SSHKey的。
 SSH Key - Win10 生成方式
 检查已有SSH Key
-1cat ~/.ssh/id_rsa.pub 
+12cat ~/.ssh/id_rsa.pub 
 得到的形如
 
 ssh-rsa ................
 
 就是SSH Key了，将其添加到GitHub-Setting-SSH&amp;GPGKey里即可。
 生成SSH Key
-1ssh-keygen -t rsa -C &quot;some comment&quot;
-一路回车即可，生成完成后查看：
-1...
+12ssh-keygen -t rsa -C &quot;some comment&quot;
+一路回车即可，生成完成后查看：...
             </div>
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/24</span>
                 </div>
                 <!-- tags -->
@@ -530,7 +529,7 @@ action上这种方式不知道可行还有路上各种ssh、Hexo本身的deploy�
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/13</span>
                 </div>
                 <!-- tags -->
@@ -551,12 +550,12 @@ action上这种方式不知道可行还有路上各种ssh、Hexo本身的deploy�
                 目的
 运行Bash脚本得到本机IP
 代码
-123456789#!/bin/shget_ip()&#123;    local IP=$( ip addr | egrep -o &#x27;[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;&#x27; | egrep -v &quot;^192\.168|^172\.1[6-9]\.|^172\.2[0-9]\.|^172\.3[0-2]\.|^10\.|^127\.|^255\.|^0\.&quot; | head ...
+12345678910#!/bin/shget_ip()&#123;    local IP=$( ip addr | egrep -o &#x27;[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;&#x27; | egrep -v &quot;^192\.168|^172\.1[6-9]\.|^172\.2[0-9]\.|^172\.3[0-2]\.|^10\.|^127\.|^255\.|^0\.&quot; | hea...
             </div>
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/10</span>
                 </div>
                 <!-- tags -->
@@ -578,12 +577,12 @@ action上这种方式不知道可行还有路上各种ssh、Hexo本身的deploy�
 开启SS之后，添加多端口再去打开防火墙比较麻烦，做了一个一键脚本。
 代码
 简易，不带Shadowsocks安装检查
-1234567891011121314151617181920212223242526272829303132#!/bin/shmethod=&quot;aes-256-cfb&quot;mup=&quot;6001&quot;log=&quot;./add.log&quot;echo -e -n &quot;add: &#123;\&quot;server_port\&quot;: $1, \&quot;password\&quot;:\&quot;$2\&quot...
+12345678910111213141516171819202122232425262728293031323334#!/bin/shmethod=&quot;aes-256-cfb&quot;mup=&quot;6001&quot;log=&quot;./add.log&quot;echo -e -n &quot;add: &#123;\&quot;server_port\&quot;: $1, \&quot;password\&quot;:\&quot;$2\&...
             </div>
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/10</span>
                 </div>
                 <!-- tags -->
@@ -611,7 +610,7 @@ Travis CI 是目前新兴的开源持续集成构建项目，它与jenkins，GO�
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/06</span>
                 </div>
                 <!-- tags -->
@@ -663,7 +662,7 @@ $2^{10} = 1024$
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/02</span>
                 </div>
                 <!-- tags -->
@@ -696,7 +695,7 @@ CIDR
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
                 </div>
                 <!-- tags -->
@@ -729,7 +728,7 @@ markdown中使用关键字对\$ 正文 \$或者\$\$ 正文 \$\$
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/12/16">
+                <div class="abstract-date" title="Last updated: 2025/12/17">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/31</span>
                 </div>
                 <!-- tags -->
@@ -1016,10 +1015,6 @@ markdown中使用关键字对\$ 正文 \$或者\$\$ 正文 \$\$
                 <span class="iconfont-archer">&#xe606;</span>
                 Hexo
             </span>
-            <span class="sidebar-tag-name" data-tags="Poisson process">
-                <span class="iconfont-archer">&#xe606;</span>
-                Poisson process
-            </span>
             <span class="sidebar-tag-name" data-tags="Probability Theory">
                 <span class="iconfont-archer">&#xe606;</span>
                 Probability Theory
@@ -1027,6 +1022,10 @@ markdown中使用关键字对\$ 正文 \$或者\$\$ 正文 \$\$
             <span class="sidebar-tag-name" data-tags="关系运算">
                 <span class="iconfont-archer">&#xe606;</span>
                 关系运算
+            </span>
+            <span class="sidebar-tag-name" data-tags="Poisson process">
+                <span class="iconfont-archer">&#xe606;</span>
+                Poisson process
             </span>
             <span class="sidebar-tag-name" data-tags="数学期望">
                 <span class="iconfont-archer">&#xe606;</span>
@@ -1055,6 +1054,18 @@ markdown中使用关键字对\$ 正文 \$或者\$\$ 正文 \$\$
             <span class="sidebar-tag-name" data-tags="Network">
                 <span class="iconfont-archer">&#xe606;</span>
                 Network
+            </span>
+            <span class="sidebar-tag-name" data-tags="Math">
+                <span class="iconfont-archer">&#xe606;</span>
+                Math
+            </span>
+            <span class="sidebar-tag-name" data-tags="Unity">
+                <span class="iconfont-archer">&#xe606;</span>
+                Unity
+            </span>
+            <span class="sidebar-tag-name" data-tags="GameLogic">
+                <span class="iconfont-archer">&#xe606;</span>
+                GameLogic
             </span>
             <span class="sidebar-tag-name" data-tags="文件传输">
                 <span class="iconfont-archer">&#xe606;</span>
@@ -1111,18 +1122,6 @@ markdown中使用关键字对\$ 正文 \$或者\$\$ 正文 \$\$
             <span class="sidebar-tag-name" data-tags="剪辑">
                 <span class="iconfont-archer">&#xe606;</span>
                 剪辑
-            </span>
-            <span class="sidebar-tag-name" data-tags="Math">
-                <span class="iconfont-archer">&#xe606;</span>
-                Math
-            </span>
-            <span class="sidebar-tag-name" data-tags="Unity">
-                <span class="iconfont-archer">&#xe606;</span>
-                Unity
-            </span>
-            <span class="sidebar-tag-name" data-tags="GameLogic">
-                <span class="iconfont-archer">&#xe606;</span>
-                GameLogic
             </span>
             <span class="sidebar-tag-name" data-tags="C#">
                 <span class="iconfont-archer">&#xe606;</span>
