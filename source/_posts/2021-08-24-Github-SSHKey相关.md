@@ -1,10 +1,10 @@
 ---
 title: Github-SSHKey相关
 date: 2021-08-24 17:16:23
-categories:
-  - Note
 tags:
-  - Note
+  - GitHub
+  - SSH
+  - 安全
 ---
 
 # Github SSH Key

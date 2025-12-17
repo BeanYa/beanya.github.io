@@ -2,13 +2,13 @@
 title: WordPress安装
 date: 2018-10-29 02:29:49
 categories:
-- Linux
+  - Linux
 tags:
-- Linux
-- Software
-- Web
-- Blog
-- Wordpress
+  - Linux
+  - WordPress
+  - CMS
+  - NextCloud
+  - 网盘
 ---
 
 # Wordpress 是什么

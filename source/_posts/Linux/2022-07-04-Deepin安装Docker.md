@@ -1,10 +1,15 @@
 ---
 title: Deepin安装Docker
-categories:
-  - Note
-tags:
-  - Note
 date: 2022-07-04 15:05:33
+categories:
+  - Linux
+tags:
+  - Linux
+  - Docker
+  - 容器
+  - Deepin
+  - Linux发行版
+  - 计算机网络
 ---
 
 安装部分来自[cnblogs](https://www.cnblogs.com/langkyeSir/p/14032801.html)，稍作修改，做查询备份用。

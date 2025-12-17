@@ -2,10 +2,10 @@
 title: Network
 date: 2018-11-01 14:28:51
 categories:
-- Network
+  - 笔记
 tags:
-- Note
-- Network
+  - 笔记
+  - 计算机网络
 ---
 
 # 子网掩码

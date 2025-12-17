@@ -2,11 +2,10 @@
 title: VideoInMarkdown-Demo
 date: 2018-10-30 20:10:38
 categories:
-- Note
+  - 工具
 tags:
-- Demo
-- Hexo
-- Markdown
+  - Markdown
+  - 文档
 ---
 
 <video id="video" controls="" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">

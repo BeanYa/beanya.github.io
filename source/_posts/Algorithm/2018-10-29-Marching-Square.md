@@ -2,7 +2,10 @@
 title: Marching Square
 date: 2018-10-29 03:06:17
 categories:
+  - 算法
 tags:
+  - 算法
+  - 编程
 ---
 
 ## Marching Squares 是什么

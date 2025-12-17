@@ -2,10 +2,14 @@
 title: Travis+Hexo自动推送博客
 date: 2019-02-06 22:42:02
 categories:
-- Note
+  - 博客建设
 tags:
-- Note
-- BlogBuilding
+  - 博客
+  - 部署
+  - CI/CD
+  - Travis
+  - GitHub
+  - Hexo
 ---
 
 # 简 介

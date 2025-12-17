@@ -1,11 +1,20 @@
 ---
 title: 用GitHub Action部署Hexo
-categories:
-  - Note
-tags:
-  - Note
-  - BlogBuilding
 date: 2021-02-13 00:00:00
+categories:
+  - 博客建设
+tags:
+  - 博客
+  - 部署
+  - CI/CD
+  - Travis
+  - GitHub
+  - Hexo
+  - SSH
+  - 安全
+  - Ubuntu
+  - Linux发行版
+  - GitHub Actions
 ---
 
 Travis 最近因为要收费了，从org变com了。

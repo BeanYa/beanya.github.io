@@ -2,13 +2,16 @@
 title: NextCloud个人网盘安装
 date: 2018-10-29 02:30:46
 categories:
-- Linux
+  - Linux
 tags:
-- Linux
-- Software
-- Web
-- Blog
-- Nextcloud
+  - Linux
+  - 代理
+  - 网络
+  - 宝塔面板
+  - 服务器管理
+  - NextCloud
+  - 网盘
+  - 计算机网络
 ---
 
 # 面板安装

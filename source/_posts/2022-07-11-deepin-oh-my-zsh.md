@@ -1,10 +1,14 @@
 ---
 title: Deepin 安装oh-my-zsh
-categories:
-  - Note
-tags:
-  - Note
 date: 2022-07-11 00:25:42
+tags:
+  - GitHub
+  - Deepin
+  - Linux发行版
+  - Ubuntu
+  - Shell
+  - Zsh
+  - 终端
 ---
 
 # Oh-my-zsh

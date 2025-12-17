@@ -2,12 +2,14 @@
 title: Quaternion四元数
 date: 2018-10-27 13:44:46
 categories:
-- Unity
-mathjax: true
+  - 游戏开发
 tags:
-- Math
-- Unity
-- GameLogic
+  - Unity
+  - 游戏开发
+  - 四元数
+  - 数学
+  - 3D
+mathjax: true
 ---
 
 ## 旋转操作

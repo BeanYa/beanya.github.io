@@ -1,12 +1,14 @@
 ---
-mathjax: true
 title: Markdown+Latex书写公式
 date: 2018-10-31 03:33:20
 categories:
-- Markdown
+  - 工具
 tags:
-- Note
-- Markdown
+  - Markdown
+  - 文档
+  - LaTeX
+  - 数学公式
+mathjax: true
 ---
 
 

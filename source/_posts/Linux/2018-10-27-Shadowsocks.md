@@ -2,12 +2,21 @@
 title: Shadowsocks
 date: 2018-10-27 04:27:29
 categories:
-- Proxy
+  - Linux
 tags:
-- VPS
-- Linux
-- Shadowsocks
-- Proxy
+  - Linux
+  - GitHub
+  - VPS
+  - 服务器
+  - 代理
+  - 网络
+  - 防火墙
+  - 安全
+  - CentOS
+  - Linux发行版
+  - Ubuntu
+  - API
+  - 工具
 ---
 
 # Shadowsocks是什么
