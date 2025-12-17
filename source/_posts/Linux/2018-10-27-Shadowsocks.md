@@ -27,6 +27,7 @@ Shadowsocks是GitHub上的一个开源项目（原作者Clowwindy因为某些原
 
 ``` bash
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
 ```
 
 参考来自[秋水逸冰](https://teddysun.com/489.html)
@@ -42,6 +43,7 @@ Debian / Ubuntu:
 ``` bash
 apt-get install python-pip
 pip install shadowsocks
+
 ```
 
 CentOS:
@@ -49,6 +51,7 @@ CentOS:
 ``` bash
 yum install python-setuptools && easy_install pip
 pip install shadowsocks
+
 ```
 
 Windows下需要先安装Python，官方说明需要安装对应版本的OpenSSL，未测试，之后再进行`pip install shadowsocks`
@@ -87,6 +90,7 @@ Windows下需要先安装Python，官方说明需要安装对应版本的OpenSSL
  "timeout":300,
  "method":"aes-256-cfb"
 }
+
 ```
 
 `*.*.*.*`为VPS公网地址
@@ -135,28 +139,33 @@ Enable manager API by specifying --manager-address, which is either a Unix socke
     ssserver --manager-address /var/run/shadowsocks-manager.sock -c tests/server-multi-passwd.json
     # Use an IP address
     ssserver --manager-address 127.0.0.1:6001 -c tests/server-multi-passwd.json
+
 ```
 
 To add a port:
 
 ``` bash
     add: {"server_port": 8001, "password":"7cd308cc059"}
+
 ```
 
 To remove a port:
 
 ``` bash
     remove: {"server_port": 8001}
+
 ```
 
 echo:
 
 ``` bash
     echo -n ping > /dev/udp/127.0.0.1/6001
+
 ```
 
 demo:
 
 ``` bash
     ssserver -p 8888 -k password -m aes-256-cfb --manager-address 127.0.0.1:6001
+
 ```

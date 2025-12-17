@@ -16,23 +16,31 @@ date: 2022-07-11 00:25:42
 先安装zsh
 
 ```bash
+
 # 切换到root
+
 su
 
 # 先安装zsh
+
 apt-get -y install zsh
 
 # 看看已经安装的shell
+
 cat /etc/shells
 
 # 切换到zsh
+
 chsh -s /bin/zsh
 
 # reboot，不重启可能看不到zsh
+
 reboot
 
 # 查看当前Shell
+
 echo $SHELL
+
 ```
 
 再安装oh-my-zsh
@@ -53,12 +61,14 @@ README提供了3个下载方式
 
 ```bash
 vi ~/.zshrc
+
 ```
 
 修改主题
 
 ```bash
 ZSH_THEME="agnoster"
+
 ```
 
 由于需要显示Git分支等符号来自于symbol字体，需要额外安装。
@@ -69,6 +79,7 @@ ZSH_THEME="agnoster"
 
 ```bash
 sudo apt install fonts-firacode
+
 ```
 
 来自[官方](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#manual-installation)

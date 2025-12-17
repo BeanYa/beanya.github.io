@@ -25,14 +25,17 @@ Travis 最近因为要收费了，从org变com了。
 ``` yaml
 
 # This is a basic workflow to help you get started with Actions
+
 name: Hexo CI
 
 # Controls when the action will run. 
+
 on:
   # Triggers the workflow on push events but only for the master branch
   push:
     branches: [ master ]
   schedule:
+
       - cron: '0 22 * * *' # 6am UTC+8 Everyday
   workflow_dispatch:
   
@@ -40,23 +43,31 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+
       - name: Fetch
         run: git fetch --all
+
       - name: Checkout
         run: git checkout origin/master
+
       - name: Hexo install
         run: npm install hexo -g
+
       - name: Install Dependencies
         run: npm install
+
       - name: Clear Hexo
         run: hexo clean
+
       - name: Build
         run: hexo g
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

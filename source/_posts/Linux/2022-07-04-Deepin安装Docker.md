@@ -23,6 +23,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     ``` bash
     sudo apt-get remove docker.io docker-engine
+
     ```
 
 2. 安装密钥管理与下载相关的工具
@@ -42,6 +43,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
     sudo apt-get update
     sudo apt install software-properties-common
     sudo apt-get update
+
     ```
 
 3. 下载并安装密钥
@@ -58,12 +60,14 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     // 官方源，能否成功可能需要看运气。
     // curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
     ```
 
 4. 查看密钥是否安装成功
 
     ``` bash
     sudo apt-key fingerprint 0EBFCD88
+
     ```
 
     如果安装成功，会出现如下内容：
@@ -74,6 +78,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
     uid Docker Release (CE deb) <docker@docker.com>
 
     sub 4096R/F273FCD8 2017-02-22
+
     ```
 
 5. 在 source.list 中添加 docker-ce 软件源
@@ -88,6 +93,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     #// 这里我们通过编辑 sudo vim /etc/apt/sources.list 添加一行即可，原因未知
     #//deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian buster stable
+
     ```
 
     官方在 buster 位置使用的是 $(lsb_release -cs)，但之前已经解释过，在 deepin 里运行它得到的是 unstable，docker 官方不支持 unstable 版本！因此直接使用官方教程的命令会安装失败。
@@ -96,6 +102,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     ``` bash
     cat /etc/debian_version.
+
     ```
 
     举例：
@@ -108,6 +115,7 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     ``` bash
     sudo add-apt-repository "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian buster stable"
+
     ```
 
     >或者
@@ -124,18 +132,21 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     ``` bash
     sudo apt-get update
+
     ```
 
 7. 安装 docker-ce
 
     ``` bash
     sudo apt-get install docker-ce
+
     ```
 
 8. 查看 docker 版本
 
     ``` bash
     docker --version
+
     ```
 
 9. 让普通用户也可运行 docker
@@ -144,18 +155,21 @@ Deepin 官方的应用仓库已经集成了 docker，但不是类似于 docker-c
 
     ``` bash
     sudo usermod -aG docker username
+
     ```
 
 10. 启动 docker
 
     ``` bash
     systemctl start docker
+
     ```
 
 11. 验证 docker 是否被正确安装并且能够正常使用
 
     ``` bash
     sudo docker run hello-world
+
     ```
 
 ## Docker UI 工具
@@ -176,10 +190,12 @@ Docker官方的Desktop现在有Linux版本：[Docker Desktop on Linux](https://d
 
 ``` bash
 docker volume create portainer_data
+
 ```
 
 启动Container：
 
 ``` bash
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.11.1
+
 ```

@@ -17,6 +17,7 @@ tags:
 
 ```bash
 cat ~/.ssh/id_rsa.pub 
+
 ```
 
 得到的形如
@@ -29,10 +30,12 @@ cat ~/.ssh/id_rsa.pub
 
 ```bash
 ssh-keygen -t rsa -C "some comment"
+
 ```
 
 一路回车即可，生成完成后查看：
 
 ```bash
 cat ~\.ssh\id_rsa.pub
+
 ```

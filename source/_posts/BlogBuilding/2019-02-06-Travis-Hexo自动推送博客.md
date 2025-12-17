@@ -7,6 +7,7 @@ tags:
 - Note
 - BlogBuilding
 ---
+
 # 简 介
 
 ## Hexo是什么
@@ -76,6 +77,7 @@ GitHubPage对应的项目中，需要新建一个分支，名字任意，用来�
 
     # S: Build Lifecycle
     install:
+
     - npm install
 
 
@@ -83,9 +85,11 @@ GitHubPage对应的项目中，需要新建一个分支，名字任意，用来�
     # - npm install -g gulp
 
     script:
+
     - hexo g
 
     after_script:
+
     - cd ./public
     - git init
     - git config user.name "@Github用户名@"
@@ -97,10 +101,13 @@ GitHubPage对应的项目中，需要新建一个分支，名字任意，用来�
 
     branches:
     only:
+
         - @创建的分支@
     env:
     global:
+
     - GH_REF: @项目地址@
+
     ```
 
 ## 使用方法
