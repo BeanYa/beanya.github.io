@@ -29,7 +29,7 @@
     "core-js": "^3.37.1",
     "eventemitter3": "^5.0.1",
     "graceful-fs": "^4.2.11",
-    "instantsearch.js": "^4.73.2",
+    "instantsearch.js": "^4.86.1",
     "perfect-scrollbar": "^1.5.5",
     "qrcode-generator": "^1.4.4",
     "webfontloader": "^1.6.28"
