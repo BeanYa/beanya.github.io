@@ -22,7 +22,7 @@
     "prettier": "prettier --write **/* --ignore-unknown && node lints/replace-ejs-tag.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.24.8",
+    "@babel/runtime": "^7.28.4",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "algoliasearch": "^4.24.0",
     "anchor-js": "^5.0.0",
